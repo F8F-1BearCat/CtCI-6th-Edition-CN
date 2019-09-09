@@ -4,13 +4,13 @@
 - 原书名称：[Cracking the Coding Interview: 189 Programming Questions and Solutions](https://www.amazon.com/Cracking-Coding-Interview-6th-Edition/dp/0984782850)
 - 译者：[F8F-1BearCat](https://f8f-1bearcat.github.io/about/) 
 
-![Cover.jpg](img/Cover.jpg)
+<div align=center><img src="img/Cover.jpg"/></div>
 
 
 
 ## 译者序
 
-译者摸鱼的时候喜欢逛一亩三分地论坛，在*终身学习>刷题*板块里偶然发现了 CtCI 这本书。本书被誉为北美码农求职面试经典书籍，因书中包含189道编码题，所以也被称为CC189，更早的版本为CC150。
+译者摸鱼的时候喜欢逛一亩三分地论坛，在 `终身学习>刷题` 板块里偶然发现了 CtCI 这本书。本书被誉为北美码农求职面试经典书籍，因书中包含189道编码题，所以也被称为CC189，更早的版本为CC150。
 
 这本书介绍了Microsoft、Google等一线互联网公司的面试流程，讲解了该怎样准备面试、怎样回答技术问题，还单独拿出一些篇幅教你如何评估选择 Offer 以及如何跟 HR 进行 Negotiation。 当然，有关时间复杂度、空间复杂度以及具体的面试题目才是本书的重点。
 
@@ -73,7 +73,7 @@
 #### XIII. Hints
 #### XIV. About the Author
 
-注：本书的 X. Solutions 部分为编码答案，本项目中不做翻译收录，需要阅读的同学可以阅读英文原版，或者 *CareerCup* 的这个项目：https://github.com/careercup/CtCI-6th-Edition。
+注：本书的 X. Solutions 部分为编码答案，本项目中不做翻译收录，需要阅读的同学可以阅读英文原版，或者 *CareerCup* 的这个项目：https://github.com/careercup/CtCI-6th-Edition 。
 
 ## 法律声明
 
