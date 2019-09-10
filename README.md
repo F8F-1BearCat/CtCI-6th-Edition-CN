@@ -40,7 +40,7 @@
 
 **数据结构**
 
-- Chapter 1 I 数组和字符串
+- [Chapter 1 I 数组和字符串](Chapter 1 I Arrays and Strings.md)
 - Chapter 2 I Linked Lists
 - Chapter 3 I 栈和队列
 - Chapter 4 I 树和图
