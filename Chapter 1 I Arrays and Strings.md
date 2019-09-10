@@ -8,13 +8,13 @@
 
 Hash table是一种通过键值映射以实现高效查找的数据结构。有很多方法可以实现这一点。在这里，我们将介绍一种简单但常见的实现。
 
-在这个简单的实现中，我们使用一个 linked list 数组和一个 hash code 方法。要插入 key（可以是字符串，也可以是其他任何数据类型）和 value，我们需要执行以下操作：
+在这个简单的实现中，我们使用一个链表数组和一个 hash code 方法。要插入 key（可以是字符串，也可以是其他任何数据类型）和 value，我们需要执行以下操作：
 
 1. 首先，计算 key 的hash code，它通常是 int 或 long 类型的。注意，两个不同的 key 可能具有相同的 hash code，因为能存在无限数量的 key，而 int 类型的个数却是有限的。
 2. 然后，将 hash code 映射到数组中的一个 index。这可以通过 `hash（key） % array_length` 之类的东西来完成。当然，两个不同的 hash code 可以映射到同一个 index。
-3. 在这个 index 处，有一个 key 和 value 的 linked list。将 key 和 value 存储在此 index 处。我们必须使用 linked list，是因为存在以下的冲突：我们可能遇到两个不同的 key 共用相同 hash code，或者两个不同的 hash code 映射到同一个 index。
+3. 在这个 index 处，有一个 key 和 value 的链表。将 key 和 value 存储在此 index 处。我们必须使用链表，是因为存在以下的冲突：我们可能遇到两个不同的 key 共用相同 hash code，或者两个不同的 hash code 映射到同一个 index。
 
-若要按其 key 来检索对应的 value，你需要重复这个过程。计算 key 的 hash code，再根据 hash code 计算 index。然后，使用这个 key 在 linked list 中搜索 value。
+若要按其 key 来检索对应的 value，你需要重复这个过程。计算 key 的 hash code，再根据 hash code 计算 index。然后，使用这个 key 在链表中搜索 value。
 
 如果冲突的数量非常高，最坏的情况运行时间是 O(N)，其中 N 是 key 的数量。但是，我们通常假设一个好的实现可以将冲突保持在最小，在这种情况下查找时间为 O(1)。
 
@@ -26,7 +26,7 @@ Hash table是一种通过键值映射以实现高效查找的数据结构。有�
 
 在某些语言中，数组（在本例中通常称为list）是可自动调整大小的。数组或 list 将随着添加数据项而增长。在其他语言中，如 Java，数组是固定长度的。需要创建数组时就定义其大小。
 
-当你需要一个可以动态调整大小的数组类型数据结构时，通常可以选择Arraylist。Arraylist 是一个根据需要调整自身大小的数组，同时仍然提供 O(1) 访问。一个典型的实现是，当数组已满时，数组的大小会加倍。每次加倍需要 O(n) 时间，但是这种情况很少发生，所以它的平摊插入时间（amortized insertion runtime）仍然是 O(1)。
+当你需要一个可以动态调整大小的数组类型数据结构时，通常可以选择 Arraylist。Arraylist 是一个根据需要调整自身大小的数组，同时仍然提供 O(1) 访问。一个典型的实现是，当数组已满时，数组的大小会加倍。每次加倍需要 O(n) 时间，但是这种情况很少发生，所以它的平摊插入时间（amortized insertion runtime）仍然是 O(1)。
 
 ```java
 1 	Arraylist<String> merge(String[] words, String[] more) {
