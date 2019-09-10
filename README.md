@@ -42,7 +42,7 @@
 
 - [Chapter 1 I 数组和字符串](Chapter_1_Arrays_and_Strings.md)
 
-- [Chapter 2 I 链表](Chapter 2 I Linked Lists.md)
+- [Chapter 2 I 链表](Chapter_2_Linked_Lists.md)
 
 - Chapter 3 I 栈和队列
 - Chapter 4 I 树和图
