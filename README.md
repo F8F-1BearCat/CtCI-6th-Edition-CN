@@ -44,8 +44,8 @@
 
 - [Chapter 2 I 链表](Chapter_2_Linked_Lists.md)
 
-- Chapter 3 I 栈和队列
-- Chapter 4 I 树和图
+- [Chapter 3 I 栈和队列](Chapter_3_Stacks_and_Queues.md)
+- [Chapter 4 I 树和图](Chapter_4_Trees_and_Graphs.md)
 
 **概念和算法**
 
