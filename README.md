@@ -6,7 +6,6 @@
 
 <div align=center><img src="img/Cover.jpg"/></div>
 
-
 ## 译者序
 
 译者摸鱼的时候喜欢逛一亩三分地论坛，在 `终身学习>刷题` 板块里偶然发现了 CtCI 这本书。本书被誉为北美码农求职面试经典书籍，因书中包含189道编码题，所以也被称为CC189，更早的版本为CC150。
@@ -51,7 +50,7 @@
 - Chapter 5 I 位处理
 - Chapter 6 I 数学和逻辑难题
 - [Chapter 7 I 面向对象的设计](Chapter_7_Object-Oriented_Design.md)
-- Chapter 8 I 递归和动态规划
+- [Chapter 8 I 递归和动态规划](Chapter_8_Recursion_and_Dynamic_Programming.md)
 - Chapter 9 I 系统设计和可扩展性
 - Chapter 10 I 排序与搜索
 - Chapter 11 I 测试
