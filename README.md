@@ -5,7 +5,6 @@
 - 译者：[F8F-1BearCat](https://f8f-1bearcat.github.io/about/) 
 
 <div align=center><img src="img/Cover.jpg"/></div>
-
 ## 译者序
 
 译者摸鱼的时候喜欢逛一亩三分地论坛，在 `终身学习>刷题` 板块里偶然发现了 CtCI 这本书。本书被誉为北美码农求职面试经典书籍，因书中包含189道编码题，所以也被称为CC189，更早的版本为CC150。
@@ -23,9 +22,7 @@
 ## 目录
 
 #### [序](Foreword.md)
-
 #### [引言](Introduction.md)
-
 #### I. The Interview Process
 #### II. Behind the Scenes
 #### III. Special Situations
@@ -39,9 +36,7 @@
 **数据结构**
 
 - [Chapter 1 I 数组和字符串](Chapter_1_Arrays_and_Strings.md)
-
 - [Chapter 2 I 链表](Chapter_2_Linked_Lists.md)
-
 - [Chapter 3 I 栈和队列](Chapter_3_Stacks_and_Queues.md)
 - [Chapter 4 I 树和图](Chapter_4_Trees_and_Graphs.md)
 
@@ -51,8 +46,8 @@
 - Chapter 6 I 数学和逻辑难题
 - [Chapter 7 I 面向对象的设计](Chapter_7_Object-Oriented_Design.md)
 - [Chapter 8 I 递归和动态规划](Chapter_8_Recursion_and_Dynamic_Programming.md)
-- Chapter 9 I 系统设计和可扩展性
-- Chapter 10 I 排序与搜索
+- [Chapter 9 I 系统设计和可扩展性](Chapter_9_System_Design_and_Scalability.md)
+- [Chapter 10 I 排序与搜索](Chapter_10_Sorting_and_Searching.md)
 - Chapter 11 I 测试
 
 **基础知识**
@@ -67,7 +62,7 @@
 - Chapter 16 I 中等
 - Chapter 17 I 困难
 
-#### X. Solutions
+#### [X. Solutions](https://github.com/careercup/CtCI-6th-Edition)
 #### XI. Advanced Topics
 #### XII. Code Library
 #### XIII. Hints
@@ -78,11 +73,8 @@
 ## 法律声明
 
 > 《中华人民共和国著作权法》
->
 > 第四节 权利的限制
->
 > 第二十二条　在下列情况下使用作品，可以不经著作权人许可，不向其支付报酬，但应当指明作者姓名、作品名称，并且不得侵犯著作权人依照本法享有的其他权利：
->
 > (六)为学校课堂教学或者科学研究，翻译或者少量复制已经发表的作品，供教学或者科研人员使用，但不得出版发行;
 
 本项目是出于个人兴趣及学习目的而建立，仅供交流与学习研究之用，严禁公开传播发行或用于商业用途。有能力阅读英文书籍者请购买原版支持。
