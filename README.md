@@ -64,9 +64,9 @@
 
 #### [X. Solutions](https://github.com/careercup/CtCI-6th-Edition)
 #### XI. Advanced Topics
-#### XII. Code Library
+#### [XII. Code Library](XII.Code_Library.md)
 #### XIII. Hints
-#### XIV. About the Author
+#### [XIV. About the Author](XIV.About_the_Author.md)
 
 注：本书的 X. Solutions 部分为编码答案，本项目中不做翻译收录，需要阅读的同学可以阅读英文原版，或者 *CareerCup* 的这个项目：https://github.com/careercup/CtCI-6th-Edition 。
 
