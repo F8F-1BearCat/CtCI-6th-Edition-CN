@@ -53,7 +53,7 @@
 **基础知识**
 
 - Chapter 12 I C 和 C++
-- Chapter 13 I Java
+- [Chapter 13 I Java](Chapter_13_Java.md)
 - Chapter 14 I 数据库
 - Chapter 15 I 线程和锁
 
