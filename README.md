@@ -42,7 +42,7 @@
 
 **概念和算法**
 
-- Chapter 5 I 位处理
+- [Chapter 5 I 位操作](Chapter_5_Bit_Manipulation.md)
 - Chapter 6 I 数学和逻辑难题
 - [Chapter 7 I 面向对象的设计](Chapter_7_Object-Oriented_Design.md)
 - [Chapter 8 I 递归和动态规划](Chapter_8_Recursion_and_Dynamic_Programming.md)
