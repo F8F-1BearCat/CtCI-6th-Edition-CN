@@ -5,6 +5,7 @@
 - 译者：[F8F-1BearCat](https://f8f-1bearcat.github.io/about/) 
 
 <div align=center><img src="img/Cover.jpg"/></div>
+
 ## 译者序
 
 译者摸鱼的时候喜欢逛一亩三分地论坛，在 `终身学习>刷题` 板块里偶然发现了 CtCI 这本书。本书被誉为北美码农求职面试经典书籍，因书中包含189道编码题，所以也被称为CC189，更早的版本为CC150。
@@ -55,7 +56,7 @@
 - Chapter 12 I C 和 C++
 - [Chapter 13 I Java](Chapter_13_Java.md)
 - Chapter 14 I 数据库
-- Chapter 15 I 线程和锁
+- [Chapter 15 I 线程和锁](Chapter_15_Threads_and_Locks.md)
 
 **附加复习题**
 
