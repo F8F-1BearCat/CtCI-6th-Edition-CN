@@ -26,8 +26,8 @@
 
 #### [序](Foreword.md)
 #### [引言](Introduction.md)
-#### [I. The Interview Process](I.The_Interview_Process.md)
-#### II. Behind the Scenes
+#### [I. 面试过程](I.The_Interview_Process.md)
+#### [II. 幕后](II.Behind_the_Scenes.md)
 #### III. Special Situations
 #### IV. Before the Interview
 #### V. Behavioral Questions
@@ -55,7 +55,7 @@
 
 **基础知识**
 
-- Chapter 12 I C 和 C++
+- [Chapter 12 I C 和 C++](Chapter_12_C_and_C++.md)
 - [Chapter 13 I Java](Chapter_13_Java.md)
 - Chapter 14 I 数据库
 - [Chapter 15 I 线程和锁](Chapter_15_Threads_and_Locks.md)
@@ -65,13 +65,13 @@
 - Chapter 16 I 中等
 - Chapter 17 I 困难
 
-#### [X. Solutions](https://github.com/careercup/CtCI-6th-Edition)
+#### [X. 答案](https://github.com/careercup/CtCI-6th-Edition)
 #### XI. Advanced Topics
-#### [XII. Code Library](XII.Code_Library.md)
+#### [XII. 代码库](XII.Code_Library.md)
 #### XIII. Hints
-#### [XIV. About the Author](XIV.About_the_Author.md)
+#### [XIV. 关于作者](XIV.About_the_Author.md)
 
-注：本书的 X. Solutions 部分为编码答案，本项目中不做翻译收录，需要阅读的同学可以阅读英文原版，或者 *CareerCup* 的这个项目：https://github.com/careercup/CtCI-6th-Edition 。
+注：本书的 `X. 答案` 部分为编码答案，本项目中不做翻译收录，需要阅读的同学可以阅读英文原版，或者 *CareerCup* 的这个项目：https://github.com/careercup/CtCI-6th-Edition 。
 
 ## 法律声明
 
