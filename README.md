@@ -28,7 +28,7 @@
 #### [引言](Introduction.md)
 #### [I. 面试过程](I.The_Interview_Process.md)
 #### [II. 幕后](II.Behind_the_Scenes.md)
-#### III. Special Situations
+#### [III. 特殊情况](III.Special_Situations.md)
 #### IV. Before the Interview
 #### V. Behavioral Questions
 #### VI. Big O
@@ -66,9 +66,9 @@
 - Chapter 17 I 困难
 
 #### [X. 答案](https://github.com/careercup/CtCI-6th-Edition)
-#### XI. Advanced Topics
+#### XI. 进阶主题
 #### [XII. 代码库](XII.Code_Library.md)
-#### XIII. Hints
+#### XIII. 提示
 #### [XIV. 关于作者](XIV.About_the_Author.md)
 
 注：本书的 `X. 答案` 部分为编码答案，本项目中不做翻译收录，需要阅读的同学可以阅读英文原版，或者 *CareerCup* 的这个项目：https://github.com/careercup/CtCI-6th-Edition 。
