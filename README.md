@@ -29,7 +29,7 @@
 #### [I. 面试过程](I.The_Interview_Process.md)
 #### [II. 幕后](II.Behind_the_Scenes.md)
 #### [III. 特殊情况](III.Special_Situations.md)
-#### IV. Before the Interview
+#### [IV. 面试之前](IV.Before_the_Interview.md)
 #### V. Behavioral Questions
 #### VI. Big O
 #### VII. Technical Questions
