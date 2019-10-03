@@ -3,219 +3,331 @@
 促使某人读这本书的原因有很多。或许是你工作经验丰富，但从未进行过此类面试。或许你是一名测试人员或 PM。或许你实际上是在使用这本书来教自己如何更好地进行面试。这些“特殊情况（special situations）”都能在本章有所收获。
 
 ### 有经验的候选人
+
 有些人认为，你在本书中看到的算法类问题只适用于应届毕业生，这并不完全正确。
 
 更有经验的工程师可能会发现面试中对算法问题的关注略有减少——但也只是略有减少。
 
-如果一家公司向没有经验的求职者提出算法问题，他们往往也会向有经验的求职者提出。无论对错，他们都认为这些问题中展示的技能对所有开发人员都很重要。
+如果一家公司向没有经验的候选人提出算法问题，他们往往也会向有经验的候选人提出。无论对错，他们都认为这些问题中展示的技能对所有开发人员都很重要。
 
 一些面试官可能会对有经验的候选人的标准有所较低。毕竟，这些候选人已经多年没有上过算法课了。他们缺乏练习。
 
-另一些人则对有经验的求职者提出了更高的标准，他们的理由是，更多的经验使候选人可以看到更多类型的问题。
+另一些人则对有经验的候选人提出了更高的标准，他们的理由是，更多的经验使候选人可以看到更多类型的问题。
 
 平均而言，两种观点是平衡的。
 
 这个规则的例外是系统设计和架构问题，以及有关于你简历的问题。通常情况下，学生不会学习太多系统架构的知识，所以只有在专业领域才能积累处理这方面问题的经验。你在此类面试问题中的表现将根据你的经验水平进行评估。然而，学生和应届毕业生仍然会被问到这些问题，他们应该做好准备，尽可能地解决这些问题。
 
-Additionally, experienced candidates will be expected to give a more in-depth, impressive response to questions like, "What was the hardest bug you've faced?"You have more experience, and your response to these questions should show it.
-### Testers and SDETs
-SDETs (software design engineers in test) write code, but to test features instead of build features. As such,they have to be great coders and great testers. Double the prep work!
-If you're applying for an SDET role, take the following approach:
->
->Prepare the Core Testing Problems: For example, how would you test a light bulb? A pen? A cash register?Microsoft Word? The Testing chapter will give you more background on these problems.
->Practice the Coding Questions: The number one thing that SDETs get rejected for is coding skills. Although coding standards are typically lower for an SDET than for a traditional developer, SDETs are still expected to be very strong in coding and algorithms. Make sure that you practice solving all the same coding and algorithm questions that a regular developer would get.
->Practice Testing the Coding Questions: A very popular format for SDET questions is "Write code to do X,"followed up by, "Okay, now test it." Even when the question doesn't specifically require this, you should ask yourself, "How would I test this?" Remember: any problem can be an SDET problem!
+此外，经验丰富的候选人将被要求对诸如 “你遇到的最困难的 bug 是什么？” 等问题做出更深入的、更令人印象深刻的回答。如果你经验丰富，对这些问题的回答应该可以证明这一点。
 
-Strong communication skills can also be very important for testers, since your job requires you to work with so many different people. Do not neglect the Behavioral Questions section.
-#### Career Advice
-Finally, a word of career advice: If, like many candidates, you are hoping to apply to an SDET position as the "easy" way into a company, be aware that many candidates find it very difficult to move from an SDET position to a dev position. Make sure to keep your coding and algorithms skills very sharp if you hope to make this move, and try to switch within one to two years. Otherwise, you might find it very difficult to be taken seriously in a dev interview.
-Never let your coding skills atrophy.
-###  Product (and Program) Management
-These "PM" roles vary wildly across companies and even within a company. At Microsoft, for instance, some PMs may be essentially customer evangelists, working in a customer-facing role that borders on marketing.Across campus though, other PMs may spend much of their day coding. The latter type of PMs would likely be tested on coding, since this is an important part of their job function.
-Generally speaking, interviewers for PM positions are looking for candidates to demonstrate skills in the following areas:
->
->Handling Ambiguity: This is typically not the most critical area for an interview, but you should be aware that interviewers do look for skill here. Interviewers want to see that, when faced with an ambiguous situation, you don't get overwhelmed and stall. They want to see you tackle the problem head on:seeking new information, prioritizing the most important parts, and solving the problem in a structured way. This typically will not be tested directly (though it can be), but it may be one of many things the interviewer is looking for in a problem.
+### 测试人员和 SDET
 
-Customer Focus (Attitude): Interviewers want to see that your attitude is customer-focused. Do you assume that everyone will use the product just like you do? Or are you the type of person who puts himself in the customer's shoes and tries to understand how they want to use the product? Questions like "Design an alarm clock for the blind" are ripe for examining this aspect. When you hear a question like this, be sure to ask a lot of questions to understand who the customer is and how they are using the product. The skills covered in the Testing section are closely related to this.
+SDET（测试中的软件设计工程师，software design engineers in test）工作中需要编写代码，但是这些代码是用来测试功能而不是构建功能的。因此，他们必须既是出色的编码人员，又是出色的测试人员。需要双倍的准备工作！
 
-Customer Focus (Technical Skills): Some teams with more complex products need to ensure that their PMs walk in with a strong understanding of the product, as it would be difficult to acquire this knowledge on the job. 
-Deep technical knowledge of mobile phones is probably not necessary to work on the Android or Windows Phone teams (although it might still be nice to have), whereas an understanding of security might be necessary to work on Windows Security. Hopefully, you wouldn't interview with a team that required specific technical skills unless you at least claim to possess the requisite skills.
+如果你要申请 SDET 职位，请采用以下方法来进行准备：
 
-Multi-Level Communication: PMs need to be able to communicate with people at all levels in the company, across many positions and ranges of technical skills. Your interviewer will want to see that you possess this flexibility in your communication. This is often examined directly, through a question such as, "Explain TCP/IP to your grandmother:'Your communication skills may also be assessed by how you discuss your prior projects.
+- 准备核心测试问题：例如，你将如何测试一个灯泡？一支钢笔？ 一台收银机？Microsoft Word ？“测试，Testing” 一章将为你提供关于这些问题的更多背景知识。
+- 练习编码问题：SDET 被拒绝的首要原因是编码能力不够。虽然 SDET 的编码标准通常低于传统开发人员，但是仍期望 SDET 能有较强的编码和算法能力。在准备时，一定要练习解决普通开发人员可能遇到的所有相同的编码和算法问题。
+- 练习测试代码问题：一个非常流行的 SDET 问题格式是“编写代码以实现 X 功能”，紧接着就会被要求：“好的，现在对其进行测试。”即使问题不是特别要求这样做，你也应该问自己，“我将如何测试这个？”记住：任何问题都可能变成一个 SDET 问题！
 
-Passion for Technology: Happy employees are productive employees, so a company wants to make sure that you'll enjoy the job and be excited about your work. A passion for technology-and, ideally, the company or team-should come across in your answers. You may be asked a question directly like, "Why are you interested in Microsoft?" Additionally, your interviewers will look for enthusiasm in how you discuss your prior experience and how you discuss the team's challenges. They want to see that you will be eager to face the job's challenges.
+对于测试人员来说，良好的沟通技巧也非常重要，因为你的工作需要你与许多不同的人一起工作。不要忽视 “工作经历问题，Behavioral Questions”  这一章的内容。
 
-Teamwork/ Leadership: This may be the most important aspect of the interview, and-not surprisingly-the job itself. All interviewers will be looking for your ability to work well with other people. Most commonly, this is assessed with questions like, "Tell me about a time when a teammate wasn't pulling his / her own weight:' Your interviewer is looking to see that you handle conflicts well, that you take initiative, that you understand people, and that people like working with you. Your work preparing for behavioral questions will be extremely important here.
+#### 职业建议
 
-All of the above areas are important skills for PMs to master and are therefore key focus areas of the interview. The weighting of each of these areas will roughly match the importance that the area holds in the actual job.
-### Dev Lead and Managers
-Strong coding skills are almost always required for dev lead positions and often for management positions as well. If you'll be coding on the job, make sure to be very strong with coding and algorithms-just like a dev would be. Google, in particular, holds managers to high standards when it comes to coding.
-In addition, prepare to be examined for skills in the following areas:
->
->Teamwork I Leadership: Anyone in a management-like role needs to be able to both lead and work with people. You will be examined implicitly and explicitly in these areas. Explicit evaluation will come in the form of asking you how you handled prior situations, such as when you disagreed with a manager. The implicit evaluation comes in the form of your interviewers watching how you interact with them. If you come off as too arrogant or too passive, your interviewer may feel you aren't great as a manager.
->Prioritization: Managers are often faced with tricky issues, such as how to make sure a team meets a tough deadline. Your interviewers will want to see that you can prioritize a project appropriately, cutting the less important aspects. Prioritization means asking the right questions to understand what is critical and what you can reasonably expect to accomplish.
->Communication: Managers need to communicate with people both above and below them, and potentially with customers and other much less technical people. Interviewers will look to see that you can communicate at many levels and that you can do so in a way that is friendly and engaging. This is, in some ways, an evaluation of your personality.
->"Getting Things Done": Perhaps the most important thing that a manager can do is be a person who "gets things done:'This means striking the right balance between preparing for a project and actually implementing it. You need to understand how to structure a project and how to motivate people so you can accomplish the team's goals.
+最后，给你一个职业建议：如果你像许多候选人一样，希望通过申请 SDET 职位这种“简单”的方式进入某个公司，那你该知道的是，许多候选人发现从 SDET 职位转到开发职位非常困难。如果你计划这样做的话，请确保你的编码和算法技能非常突出，并尝试在一到两年内转换职位。否则，你可能会发现在开发面试中很难被认真对待。 
 
-Ultimately, most of these areas come back to your prior experience and your personality. Be sure to prepare very, very thoroughly using the interview preparation grid.
-### Startups
-The application and interview process for startups is highly variable. We can't go through every startup,but we can offer some general pointers. Understand, however, that the process at a specific startup might deviate from this.
-#### The Application Process
-Many startups might post job listings, but for the hottest startups, often the best way in is through a personal referral. This reference doesn't necessarily need to be a close friend or a coworker. Often just by reaching out and expressing your interest, you can get someone to pick up your resume to see if you're a good fit.
-#### Visas and Work Authorization
-Unfortunately, many smaller startups in the U.S. are not able to sponsor work visas. They hate the system as much you do, but you won't be able to convince them to hire you anyway. If you require a visa and wish to work at a startup, your best bet is to reach out to a professional recruiter who works with many startups (and may have a better idea of which startups will work with visa issues), or to focus your search on bigger startups.
-#### Resume Selection Factors
-Startups tend to want engineers who are not only smart and who can code, but also people who would work well in an entrepreneurial environment. Your resume should ideally show initiative. What sort of projects have you started?
-Being able to "hit the ground running" is also very important; they want people who already know the language of the company.
-#### The Interview Process
-In contrast to big companies, which tend to look mostly at your general aptitude with respect to software development, startups often look closely at your personality fit, skill set, and prior experience.
->Personality Fit: Personality fit is typically assessed by how you interact with your interviewer. Establishing a friendly, engaging conversation with your interviewers is your ticket to many job offers.
->Skill Set: Because startups need people who can hit the ground running, they are likely to assess your skills with specific programming languages. If you know a language that the startup works with, make sure to brush up on the details.
->Experience: Startups are likely to ask you a lot of questions about your experience. Pay special attention to the Behavioral Questions section.
+永远不要让你的编程技能退化。
 
-In addition to the above areas, the coding and algorithms questions that you see in this book are also very common.
-### Acquisitions and Acquihires
-During the technical due diligence process for many acquisitions, the acquirer will often interview most or all of a startup's employees. Google, Yahoo, Facebook, and many other companies have this as a standard part of many acquisitions.
-#### Which startups go through this? And why?
-Part of the reasoning for this is that their employees had to go through this process to get hired. They don't want acquisitions to be an "easy way" into the company. And, since the team is a core motivator for the acquisition, they figure it makes sense to assess the skills of the team.
-Not all acquisitions are like this, of course. The famous multi-billion dollar acquisitions generally did not have to go through this process. Those acquisitions, after all, are usually about the user base and community, less so about the employees or even the technology. Assessing the team's skills is less essential.
-However, it is not as simple as"acquihires get interviewed, traditional acquisitions do not:'There is a big gray area between acquihires (i.e., talent acquisitions) and product acquisitions. Many startups are acquired for the team and ideas behind the technology. The acquirer might discontinue the product, but have the team work on something very similar.
-If your startup is going through this process, you can typically expect your team to have interviews very similar to what a normal candidate would experience (and, therefore, very similar to what you'll see in this book).
-#### How important are these interviews?
-These interviews can carry enormous importance. They have three different roles:
->
->They can make or break acquisitions. They are often the reason a company does not get acquired.
->They determine which employees receive offers to join the acquirer.
->They can affect the acquisition price (in part as a consequence of the number of employees who join).
+### 产品（和项目） 经理
 
-These interviews are much more than a mere "screen."
-#### Which employees go through the interviews?
-For tech startups, usually all of the engineers go through the interview process, as they are one of the core motivators for the acquisition.
-In addition, sales, customer support, product managers, and essentially any other role might have to go through it.
-The CEO is often slotted into a product manager interview or a dev manager interview, as this is often the closest match for the CEO's current responsibilities. This is not an absolute rule, though. It depends on what the CEO's role presently is and what the CEO is interested in. With some of my clients, the CEO has even opted to not interview and to leave the company upon the acquisition.
-#### What happens to employees who don't perform well in the interview?
-Employees who underperform will often not receive offers to join the acquirer. (If many employees don't perform well, then the acquisition will likely not go through.)
-In some cases, employees who performed poorly in interviews will get contract positions for the purpose of "knowledge transfer:'These are temporary positions with the expectation that the employee leaves at the termination of the contract (often six months), although sometimes the employee ends up being retained.
-In other cases, the poor performance was a result of the employee being mis-slotted. This occurs in two common situations:
->
->Sometimes a startup labels someone who is not a "traditional"software engineer as a software engineer.
->This often happens with data scientists or database engineers. These people may underperform during the software engineer interviews, as their actual role involves other skills.
->In other cases, a CEO "sells" a junior software engineer as more senior than he actually is. He underperforms for the senior bar because he's being held to an unfairly high standard.
+这些 “PM” 角色在不同的公司甚至在同一公司内部都有很大的差异。例如，在 Microsoft，一些 PM 本质上可能是客户传道者（customer evangelists），扮演着与市场营销沾边的面向客户的角色。不过，在整个园区里，其他 PM 可能需要花费很多时间进行编码。后一种 PM 的职位在面试时可能会对候选人在编码上进行测试，因为这是其工作功能的重要部分。
 
-In either case, sometimes the employee will be re-interviewed for a more appropriate position. (Other times though, the employee is just out of luck.)
-In rare cases, a CEO is able to override the decision for a particularly strong employee whose interview performance didn't reflect this.
-#### Your "best" (and worst) employees might surprise you.
-The problem-solving/algorithm interviews conducted at the top tech companies evaluate particular skills,which might not perfectly match what their manager evaluates in their employees.
-I've worked with many companies that are surprised at who their strongest and weakest performers are in interviews. That junior engineer who still has a lot to learn about professional development might turn out to be a great problem-solver in these interviews.
-Don't count anyone out-or in-until you've evaluated them the same way their interviewers will.
-#### Are employees held to the same standards as typical candidates?
-Essentially yes, although there is a bit more leeway.
-The big companies tend to take a risk-averse approach to hiring. If someone is on the fence, they often lean towards a no-hire.
-In the case of an acquisition, the "on the fence" employees can be pulled through by strong performance from the rest of the team.
-#### How do employees tend to react to the news of an acquisition/acquihire?
-This is a big concern for many startup CEOs and founders. Will the employees be upset about this process?
-Or, what if we get their hopes up but it doesn't happen?What I've seen with my clients is that the leadership is worried about this more than is necessary.
-Certainly, some employees are upset about the process. They might not be excited about joining one of the big companies for any number of reasons.
-Most employees, though, are cautiously optimistic about the process. They hope it goes through, but they know that the existence of these interviews means that it might not.
-#### What happens to the team after an acquisition?
-Every situation is different. However, most of my clients have been kept together as a team, or possibly integrated into an existing team.
-#### How should you prepare your team for acquisition interviews?
-Interview prep for acquisition interviews is fairly similar to typical interviews at the acquirer. The difference is that your company is doing this as a team and that each employee wasn't individually selected for the interview on their own merits.
-*You're all in this together.*
-Some startups I've worked with put their "real" work on hold and have their teams spend the next two or three weeks on interview prep.
-Obviously, that's not a choice all companies can make, but-from the perspective of wanting the acquisition to go through-that does increase your results substantially.
-Your team should study individually, in teams of two or three, or by doing mock interviews with each other.
-If possible, use all three of these approaches.
-*Some people may be less prepared than others.*
-Many developers at startups might have only vaguely heard of big O time, binary search tree, breadth-first search, and other important concepts. They'll need some extra time to prepare.
-People without computer science degrees (or who earned their degrees a long time ago) should focus first on learning the core concepts discussed in this book, especially big O time (which is one of the most important). A good first exercise is to implement all the core data structures and algorithms from scratch.
-If the acquisition is important to your company, give these people the time they need to prepare. They'll need it.
-*Don't wait until the last minute.*
-As a startup, you might be used to taking things as they come without a ton of planning. Startups that do  this with acquisition interviews tend not to fare well.
-Acquisition interviews often come up very suddenly. A company's CEO is chatting with an acquirer (or several acquirers) and conversations get increasingly serious. The acquirer mentions the possibility of interviews at some point in the future. Then, all of a sudden, there's a "come in at the end of this week" message.
-If you wait until there's a firm date set for the interviews, you probably won't get much more than a couple of days to prepare. That might not be enough time for your engineers to learn core computer science concepts and practice interview questions.
-### For Interviewers
-Since writing the last edition, I've learned that a lot of interviewers are using Cracking the Coding Interview to learn how to interview. That wasn't really the book's intention, but I might as well offer some guidance for interviews.
-#### Don't actually ask the exact questions in here.
-First, these questions were selected because they're good for interview preparation. Some questions that are good for interview preparation are not always good for interviewing. For example, there are some brainteasers in this book because sometimes interviewers ask these sorts of questions. It's worthwhile for candidates to practice those if they're interviewing at a company that likes them, even though I personally find them to be bad questions.
-Second, your candidates are reading this book, too. You don't want to ask questions that your candidates have already solved.
-You can ask questions similar to these, but don't just pluck questions out of here. Your goal is to test their problem-solving skills, not their memorization skills.
-#### Ask Medium and Hard Problems
-The goal of these questions is to evaluate someone's problem-solving skills. When you ask questions that are too easy, performance gets clustered together. Minor issues can substantially drop someone's performance. It's not a reliable indicator.
-#### Look for questions with multiple hurdles.
-Some questions have "Aha!" moments. They rest on a particular insight. If the candidate doesn't get that one bit, then they do poorly. If they get it, then suddenly they've outperformed many candidates.
-Even if that insight is an indicator of skills, it's still only one indicator. Ideally, you want a question that has a series of hurdles, insights, or optimizations. Multiple data points beat a single data point.
-Here's a test: if you can give a hint or piece of guidance that makes a substantial difference in a candidate's performance, then it's probably not a good interview question.
-#### Use hard questions, not hard knowledge.
-Some interviewers, in an attempt to make a question hard, inadvertently make the knowledge hard. Sure enough, fewer candidates do well so the statistics look right, but it's not for reasons that indicate much about the candidates' skills.
-The knowledge you are expecting candidates to have should be fairly straightforward data structure and algorithm knowledge. It's reasonable to expect a computer science graduate to understand the basics of big O and trees. Most won't remember Dijkstra's algorithm or the specifics of how AVL trees works.
-If your interview question expects obscure knowledge, ask yourself: is this truly an important skill? Is it so important that I would like to either reduce the number of candidates I hire or reduce the amount to which I focus on problem-solving or other skills?
-Every new skill or attribute you evaluate shrinks the number of offers extended, unless you counter-balance this by relaxing the requirements for a different skill. Sure, all else being equal, you might prefer someone who could recite the finer points of a two-inch thick algorithms textbook. But all else isn't equal.
-#### Avoid "scary" questions.
-Some questions intimidate candidates because it seems like they involve some specialized knowledge,even if they really don't. This often includes questions that involve:
->
->Math or probability.
->Low-level knowledge (memory allocation, etc.).
->System design or scalability.
->Proprietary systems (Google Maps, etc.).
+一般来说，负责 PM 职位的面试官希望候选人能展示以下方面的技能：
 
-For example, one question I sometimes ask is to find all positive integer solutions under 1,000 to a 3 + b 3 = c 3 + d 3 (page 68).
-Many candidates will at first think they have to do some sort of fancy factorization of this or semi-advanced math. They don't. They need to understand the concept of exponents, sums, and equality, and that's it.
-When I ask this question, I explicitly say, "I know this sounds like a math problem. Don't worry. It's not. It's an algorithm question:' If they start going down the path of factorization, I stop them and remind them that it's not a math question.
-Other questions might involve a bit of probability. It might be stuff that a candidate would surely know (e.g.,to pick between five options, pick a random number between 1 and 5). But simply the fact that it involves probability will intimidate candidates.
-Be careful asking questions that sound intimidating. Remember that this is already a really intimidating situation for candidates. Adding on a "scary" question might just fluster a candidate and cause him to underperform.
-If you're going to ask a question that sounds "scary;' make sure you really reassure candidates that it doesn't require the knowledge that they think it does.
-#### Offer positive reinforcement.
-Some interviewers put so much focus on the "right" question that they forget to think about their own behavior.
-Many candidates are intimidated by interviewing and try to read into the interviewer's every word. They can cling to each thing that might possibly sound positive or negative. They interpret that little comment of "good luck"to mean something, even though you say it to everyone regardless of performance.
-You want candidates to feel good about the experience, about you, and about their performance. You want them to feel comfortable. A candidate who is nervous will perform poorly, and it doesn't mean that they aren't good. Moreover, a good candidate who has a negative reaction to you or to the company is less likely to accept an offer-and they might dissuade their friends from interviewing/accepting as well.
-Try to be warm and friendly to candidates. This is easier for some people than others, but do your best.
-Even if being warm and friendly doesn't come naturally to you, you can still make a concerted effort to sprinkle in positive remarks throughout the interview:
->
->"Right, exactly."
->"Great point."
->"Good work."
->"Okay, that's a really interesting approach."
->"Perfect."
+- 处理模棱两可：这通常不是面试中最关键的部分，但你也应该知道面试官确实看重候选人这方面的能力。面试官希望看到的是，当面对一个模棱两可的情况时，你不会不知所措，也不会停滞不前。他们希望看到你能够正面处理问题：寻找新信息，优先处理最重要的部分，并以结构化的方式解决问题。这通常在面试中不会直接考察（虽然可以），但在面试问题的回答中，面试官会留意候选人这方面的特质。
+- 以用户为中心（态度）：面试官希望看到你以用户为中心的态度。你认为每个人都会像你一样使用这个产品吗？或者，你是那种设身处地为客户着想，试图理解他们想如何使用产品的人？诸如 “为盲人设计一个闹钟” 之类的问题已经成熟，可以用来考察候选人这一方面的特质。当你听到这样的问题时，一定要问很多问题来了解用户是谁，以及他们如何使用产品。“测试，Testing ” 一章中涉及的技能与此密切相关。
+- 以用户为中心（技术技能）：一些拥有更复杂产品的团队需要确保他们的 PM 对产品有更深刻的理解，因为在工作中很难获得这些知识。在 Android 或 Windows Phone 的团队中，可能不需要具备深入的手机技术知识（尽管这仍然是件好事），而在 Windows Security 团队中，对安全性相关知识的了解可能是必要的。希望你不会去面试一个需要特殊技能的团队，除非你至少声称自己已经拥有了必要的技能。
+- 多级沟通：PM 需要能够与公司各个级别的人员沟通，跨越多个职位和技术技能范围。面试官希望看到你在沟通中拥有这种灵活性。这通常是通过诸如 “向祖母解释 TCP/IP” 之类的问题来直接检验的。也可能通过与你讨论先前项目的方式来评估你的沟通技巧。
+- 对技术的热情：快乐的员工是富有生产力的员工，因此公司想要确保你会喜欢这份工作，并对你的工作内容感到兴奋。对技术的热情——最好是对公司或团队的热情——应该体现在你的回答中。你可能会被直接问到这样的问题，例如 “你为什么对微软感兴趣？”此外，面试官会在你如何谈论你以前的经历，以及你如何谈论团队的挑战时，来发现你对工作的热情。他们想看到的是，你会渴望面对工作中的挑战。
+- 团队合作/领导力：这可能是面试中最重要的方面，而且，毫不奇怪，在工作中也是最重要的。所有的面试官都会考察你与他人合作的能力。最常见的评估方法是这样的：“请给出一个队友没有尽到自己职责的例子”。面试官希望看到你能很好地处理冲突，你能采取主动，你能理解他人，人们喜欢和你一起工作。你为工作经历问题做的准备工作在这里将非常重要。
 
-No matter how poorly a candidate is doing, there is always something they got right. Find a way to infuse some positivity into the interview.
-#### Probe deeper on behavioral questions.
-Many candidates are poor at articulating their specific accomplishments.
-You ask them a question about a challenging situation, and they tell you about a difficult situation their team faced. As far as you can tell, the candidate didn't really do much.
-Not so fast, though. A candidate might not focus on themselves because they've been trained to celebrate their team's accomplishments and not boast about themselves. This is especially common f or people in leadership roles and female candidates.
-Don't assume that a candidate didn't do much in a situation just because you have trouble understanding what they did. Call out the situation (nicely!). Ask them specifically if they can tell you what their role was.
-If it didn't really sound like resolving the situation was difficult, then, again, probe deeper. Ask them to go into more details about how they thought about the issue and the different steps they took. Ask them why they took certain actions. Not describing the details of the actions they took makes them a flawed candidate, but not necessarily a flawed employee.
-Being a good interview candidate is its own skill (after all, that's part of why this book exists), and it's probably not one you want to evaluate.
-#### Coach your candidates.
-Read through the sections on how candidates can develop good algorithms. Many of these tips are ones you can offer to candidates who are struggling. You're not "teaching to the test" when you do this; you're separating interview skills from job skills.
->
->Many candidates don't use an example to solve an interview question (or they don't use a good example). This makes it substantially more difficult to develop a solution, but it doesn't necessarily mean that they're not very good problem solvers. If candidates don't write an example themselves, or if they inadvertently write a special case, guide them.
->Some candidates take a long time to find the bug because they use an enormous example. This doesn't make them a bad tester or developer. It just means that they didn't realize that it would be more efficient to analyze their code conceptually first, or that a small example would work nearly as well. Guide them.
->If they dive into code before they have an optimal solution, pull them back and focus them on the algorithm (if that's what you want to see). It's unfair to say that a candidate never found or implemented the optimal solution if they didn't really have the time to do so.
->If they get nervous and stuck and aren't sure where to go, suggest to them that they walk through the brute force solution and look for areas to optimize.
->If they haven't said anything and there is a fairly obvious brute force, remind them that they can start off with a brute force. Their first solution doesn't have to be perfect.
+以上所有方面都是 PM 需要掌握的重要技能，因此也是面试的重点领域。这些方面的权重将与该领域在实际工作中的重要性大致匹配。
 
-Even if you think that a candidate's ability in one of these areas is an important factor, it's not the only factor.You can always mark someone down for"failing"this hurdle while helping to guide them past it.
-While this book is here to coach candidates through interviews, one of your goals as an interviewer is to remove the effect of not preparing. After all, some candidates have studied for interviews and some candidates haven't, and this probably doesn't reveal much about their skills as an engineer.
-Guide candidates using the tips in this book (within reason, of course-you don't want to coach candidates through the problems so much that you're not evaluating their problem-solving skills anymore).
-Be careful here, though. If you're someone who comes off as intimidating to candidates, this coaching could make things worse. It can come off as your telling candidates that they're constantly messing up by creating bad examples, not prioritizing testing the right way, and so on.
-#### If they want silence, give them silence.
-One of the most common questions that candidates ask me is how to deal with an interviewer who insists on talking when they just need a moment to think in silence.
-If your candidate needs this, give your candidate this time to think. Learn to distinguish between "I'm stuck and have no idea what to do;' and "I'm thinking in silence."
-It might help you to guide your candidate, and it might help many candidates, but it doesn't necessarily help all candidates. Some need a moment to think. Give them that time, and take into account when you're evaluating them that they got a bit less guidance than others.
-#### Know your mode: sanity check, quality, specialist, and proxy.
-At a very, very high level, there are four modes of questions:
->
->**Sanity Check**: These are often easy problem-solving or design questions. They assess a minimum degree of competence in problem-solving. They won't tell distinguish between "okay" versus "great'; so don't evaluate them as such. You can use them early in the process (to filter out the worst candidates), or when you only need a minimum degree of competency.
->**Quality Check**: These are the more challenging questions, often in problem-solving or design. They are designed to be rigorous and really make a candidate think. Use these when algorithmic/problem-solving skills are of high importance. The biggest mistake people make here is asking questions that are,in fact, bad problem-solving questions.
->**Specialist Questions**: These questions test knowledge of specific topics, such as Java or machine learning. They should be used when for skills a good engineer couldn't quickly learn on the job. These questions need to be appropriate for true specialists. Unfortunately, I've seen situations where a company asks a candidate who just completed a 10-week coding bootcamp detailed questions about Java. What does this show? If she has this knowledge, then she only learned it recently and, therefore, it's likely to be easily acquirable. If it's easily acquirable, then there's no reason to hire for it.
->**Proxy Knowledge**: This is knowledge that is not quite at the specialist level (in fact, you might not even need it), but that you would expect a candidate at their level to know. For example, it might not be very important to you if a candidate knows CSS or HTML. But if a candidate has worked in depth with these technologies and can't talk about why tables are or aren't good, that suggests an issue. They're not absorbing information core to their job.
+### 开发主管和经理
 
-When companies get into trouble is when they mix and match these:
->
->They ask specialist questions to people who aren't specialists.
->They hire for specialist roles when they don't need specialists.
->They need specialists but are only assessing pretty basic skills.
->They are asking sanity check (easy) questions, but think they're asking quality check questions. They therefore interpret a strong difference between "okay" and "great" performance, even though a very minor detail might have separated these.
+开发主管职位和经理职位几乎总是需要候选人具备强大的编码技能。如果你要在工作中进行编码，请确保对代码和算法非常精通，就像开发人员一样。尤其是 Google，在编码方面对管理人员要求很高。
 
-In fact, having worked with a number of small and large tech companies on their hiring process, I have found that most companies are doing one of these things wrong.
+此外，准备接受以下各方面的技能检查：
+
+- 团队合作/领导力：任何担任管理角色的人都必须既能领导他人，又能与他人共同合作。你将在这些方面接收隐式和显式的考察。显示的评估（explicit evaluation）将以询问你如何处理之前工作中的情况的形式出现，比如你与经理意见相左的时候你怎么应对。隐式的评估（implicit evaluation）以面试官观察你如何与他们互动的形式出现。如果你太自负或太被动，面试官可能会觉得你不足以担任管理职位。
+- 优先级排序：管理人员经常会面临棘手的问题，例如如何确保团队在紧张的截止日期前完成任务。你的面试官会希望你可以适当地确定项目的优先级，从而减少处理次要工作的精力。优先级排序意味着提出正确的问题，以了解什么是关键的，什么是你可以在合理预期内完成的。
+- 沟通：管理人员需要与他上下级的人员进行沟通，也可能与客户或其他技术水平较低的人员进行沟通。面试官希望看到你可以进行多层次的交流，而且是以一种友好和吸引人的方式进行。在某种程度上，这也是对你个性的一种评估。
+- “把事情做好”：也许管理者可以做的最重要的事情就是“把事情做好”。这意味着在为项目做准备和实际执行之间取得适当的平衡。你需要了解如何组织一个项目，如何激励员工，这样你才能完成团队的目标。
+
+最终，这些方面的大部分都会回到你之前的经历和你的个性上来。一定要使用面试准备表格进行非常非常彻底的准备。
+
+### 初创公司
+
+不同初创公司的申请和面试过程相差很大。我们不能逐一介绍每一家初创公司，但我们可以提供一些一般性的建议。但是，要明白，特定的初创公司的面试流程可能与此有所不同。
+
+#### 申请流程
+
+许多初创公司可能会发布招聘信息，但对于最热门的初创公司来说，通常最好的方式是通过个人推荐。这个推荐人不一定是你的密友或同事。通常情况下，只要你主动表达你的兴趣，你就能让别人拿起你的简历，看看你是否适合这份工作。
+
+#### 签证和工作授权
+
+不幸的是，美国许多规模较小的初创公司无法提供工作签证。他们和你一样讨厌这个制度，但无论如何你都无法说服他们雇用你。如果你需要签证并且希望在一家初创公司工作，你最好的选择是联系一位与许多初创公司合作的专业招聘人员（他们可能对哪些初创公司会处理签证问题有更好的了解），或者把搜索重点放在更大的初创公司上。
+
+#### 简历筛选因素
+
+初创公司往往希望工程师不仅聪明、会编程，而且还要能在创业环境中出色工作。理想情况下，你的简历应该显示出你的主动性。例如，你从头开始做过哪些项目？
+
+能够“立即上手（hit the ground running）”也非常重要，他们想要那些已经了解公司语言的人。
+
+#### 面试过程
+
+大公司往往主要关注你在软件开发方面的总体能力，而初创公司则通常会密切关注你的个性、技能和先前的经验。
+
+- 性格契合度：性格契合度通常由你与面试官的互动方式来评估。和面试官建立一个友好的、有吸引力的对话是你获得很多工作机会的敲门砖。
+- 技术栈：因为初创公司需要能够立即上手的人，所以他们很可能会用特定的编程语言来评估你的能力。如果你知道该创业公司使用的语言，一定要温习一下细节。
+- 经验：初创公司可能会问你很多有关你工作经验的问题。请特别注意“工作经历问题”这章的内容。
+
+除上述方面外，你在本书中看到的编码和算法问题在初创公司的面试过程中也非常常见。
+
+### 收购（Acquisitions）和收购雇佣（Acquihires）
+
+在对许多收购进行技术尽职调查（due diligence）的过程中，收购方通常会对初创公司的大部分或全部员工进行重新面试。Google、Yahoo、Facebook 和许多其他公司都将此过程作为许多收购的的标准组成部分。
+
+#### 哪些初创公司会经历这种情况？ 又为什么呢？
+
+进行收购面试，的部分原因是收购方认为他们的员工必须经过这个过程才能被雇佣。他们不希望收购成为这些员工进入公司的“捷径”。而且，由于被收购的方的团队是收购的核心动力，因此他们认为评估团队的技能是很有意义的。
+
+当然，并非所有的收购都是这样的。著名的数十亿美元收购通常不需要经过这个过程。毕竟，这些收购通常是针对用户群和社区的，而与员工甚至技术无关。这时估团队的技能就不是那么重要了。
+
+但是，这并不像 “收购雇佣需要面试而传统收购则不需要” 那么简单。雇佣收购（即人才收购）和产品收购之间存在很大的灰色地带。许多初创公司是因其团队和技术背后的想法而被收购的。因而收购完成后，收购方可能会中止原来产品的生产，但要让团队从事非常相似的工作。
+
+如果你的创业公司正在经历这个过程，通常你需要做好你的团队有非常类似于普通候选人的面试经历的准备（因此，非常类似于你将在本书中看到的）。
+
+#### 这些面试有多重要？
+
+这些面试具有极大的重要性。它们在以下三种不同方面扮演着重要的角色：
+
+- 它们可以决定收购的成败与否。这往往是一家公司无法被收购的原因。
+- 它们决定了哪些员工可以收到加入收购方公司的 offer
+- 它们可以影响收购价格（部分因素是加入的员工数量）。
+
+这些面试不仅仅是走个形式。
+
+#### 哪些员工需要接受面试？
+
+对于科技初创公司来说，通常所有的工程师都要经过面试，因为他们是收购的核心动力之一。
+
+此外，销售、客户支持、产品经理以及任何其他角色可能都必须经历这个过程。
+
+通常会将初创公司的 CEO 安排在产品经理或开发经理的职位面试中，因为这通常是与 CEO 当前职责最接近的匹配项。但是，这并不是一个绝对的规则。这取决于 CEO 目前的角色和他感兴趣的是什么。在我的一些客户中，CEO  甚至选择不进行面试，而是在收购完成后离开公司。
+
+#### 在面试中表现不佳的员工会怎么样？
+
+表现不佳的员工通常不会收到加入收购方的 offer。（如果许多员工表现不佳，那么收购很可能不会成功。）
+
+在某些情况下，出于“知识转移（knowledge transfer）”的目的，一些面试表现不佳的员工会获得合同职位。但是这些职位是临时的，预期中员工将在合同终止时离职（通常是 6 个月），尽管有时员工最终会被留下来。
+
+在其他情况下，糟糕的表现是由于员工被安置在错误的位置上（mis-slotted）造成的。这种问题通常发生在两种情况下：
+
+- 有时候，一家初创公司会把不是“传统”软件工程师的人贴上软件工程师的标签。这经常发生在数据科学家或数据库工程师身上。这些人可能在软件工程师面试中表现不佳，因为他们的实际角色涉及其他技能。
+
+- 在其他情况下，CEO将一名初级软件工程师向高于其实际水平的高级职位进行“推销”。这就使这名工程师在高级职位的面试中表现不佳，因为他被要求达到不公平的高标准。
+
+在这两种情况下，有时都会对员工进行重新面试以找到更合适的职位。（不过，其他时候，员工就没这么走运了。）
+
+在极少数情况下，首席执行官能够推翻对一个特别优秀的员工的面试决定，即使他在面试中的表现并没有反映出有什么问题。
+
+#### 你“最佳”（和最差）员工可能会让你大吃一惊。
+
+在顶级科技公司进行的问题解决（problem-solving）/算法（algorithm）面试评估的是特定技能，而这些技能可能并不完全符合他们的经理对员工的评估。
+
+我曾与许多公司合作过，他们对面试中表现最好和最差的员工感到惊讶。在这些面试中，对专业发展还有很多需要学习的初级工程师可能会成为一个很好的问题解决者。
+
+除非你已经按照他们的面试官的方式对他们进行了评估，否则请不要把任何人排除在外。
+
+#### 员工是否要面临与典型的候选人相同的标准？
+
+本质上是的，尽管有更多的回旋余地。
+
+大公司倾向于采取规避风险的招聘方式。如果对某人的是否录用持观望态度，他们往往倾向于不雇佣。
+
+在收购的情况下，“保持观望（on the fence）”的员工可以由于其所在团队其他成员的出色表现而获得通过。
+
+#### 员工对收购/收购雇佣的消息有什么反应？
+
+这是许多初创公司 CEO 和创始人非常关心的问题。员工会对这个过程感到不安吗？或者，如果我们让他们燃起希望，但却没有实现呢？
+
+我从我的客户那里看到，领导层对此担心的程度超出了必要。
+
+当然，是有一些员工对这个过程感到不安。出于种种原因，他们可能不会对加入一家大公司感到兴奋。
+
+不过，大多数员工对这个过程持谨慎乐观的态度。他们希望收购能完成，但他们知道，这些面试的存在意味着它也有可能不会顺利完成。
+
+#### 收购之后团队会发生什么？
+
+每种情况都是不同的。但是，我的大多数客户都被作为一个团队被整体保留，或者可能集成到一个现有的团队中。
+
+#### 你应该如何准备团队的收购面试？
+
+收购面试的面试准备与收购方的典型面试相当相似。不同之处在于，你的公司是作为一个团队来完成此任务的，而不是根据每个员工的优点来单独挑选他们参加面试。
+
+*你们都是一伙的。*
+
+与我合作过的一些初创公司搁置了他们的“实际”工作，并让他们的团队在接下来的两到三周时间里准备面试。
+
+显然，这不是所有公司都能做出的选择，但是，从希望收购得以进行的角度来看，这确实可以大大提高你的业绩。
+
+你的团队应该单独学习，或两三个人一组，或者进行模拟面试。如果可能，请使用这三种方法。
+
+*有些人可能比其他人准备得少。*
+
+许多初创公司的开发人员可能只是模糊地听说过算法复杂度（big O time）、二分搜索树、广度优先搜索和其他重要概念。他们将需要一些额外的时间来准备。
+
+没有计算机科学学位的人（或很久以前获得学位的人）应该首先专注于学习本书中讨论的核心概念，尤其是 big O time（这是最重要的一个）。一个很好的第一步是从头开始实现所有核心数据结构和算法。
+
+如果收购对你的公司很重要，给这些人足够的时间来准备。他们会需要它。
+
+*不要等到最后一分钟。*
+
+作为一家初创公司，你可能习惯了在没有大量计划的情况下进行工作。但如果你在收购面试时还是这种态度的话，结果往往不会很好。
+
+收购面试经常是突然出现的。一家公司的 CEO 正在与一位收购方（或几个收购方）交谈，谈话变得越来越严肃。收购方提到未来某一时刻进行面试的可能性。然后，突然间，出现了一条“本周末到”的消息。
+
+如果你等到一个确定的面试日期，你可能就只有几天的时间来准备了。你的工程师可能没有足够的时间来学习核心的计算机科学概念并练习面试问题。
+
+### 给面试官
+
+自编写上一版以来，我了解到许多面试官正在使用 “Cracking the Coding Interview” 来学习如何进行面试。这并不是本书的真正意图，但我不妨为面试提供一些指导。
+
+#### 实际面试中不要问本书出现的确切问题。
+
+首先，本书中选择这些问题是因为它们非常适合面试准备。但是一些适合面试准备的问题并不总是适合面试。例如，本书中有一些脑筋急转弯，因为有时面试官会问这类问题。如果候选人在一家喜欢这些问题的公司面试，那么练习这些问题是值得的，尽管我个人认为这些问题很糟糕。
+
+其次，你的候选人也在读这本书。你应该不想问你的候选人哪些已经解决了的问题吧。
+
+你可以问类似的问题，但不要只是把问题从这里拿出来。你的目标是测试他们解决问题的能力，而不是他们的记忆能力。
+
+#### 问中等和困难难度的问题
+
+这些问题的目的是评估一个人解决问题的能力。当你问一些过于简单的问题时，候选人的表现就不能完全发挥。简单问题会严重影响一个人的表现。这不是一个可靠的指标。
+
+#### 寻找有多个障碍的问题。
+
+有些问题会有一个“啊哈！”的时刻。它们基于一种特殊的洞察力。如果候选人没有 get 到这个点，那么他们的表现就会很差。如果他们 get 到了这点，那么他们的表现突然就会胜过许多候选人。
+
+即使这种洞察力是技能的一个指标，它仍然只是一个指标。理想情况下，你需要一个具有一系列障碍、见解或优化的问题。多个考察点胜过一个考察点。
+
+这里有一个测试：如果你能给一个提示或指导，使一个候选人的表现有很大的不同，那么这可能不是一个很好的面试问题。
+
+#### 使用困难的问题，而不是困难的知识。
+
+有些面试官，为了把一个问题弄得很难，无意中使用到了困难的知识。果然，很少有候选人表现出色，所以统计数据看起来是正确的，但这并没有准确反映出候选人的技能水平。
+
+你期望候选人拥有的知识应该是相当简单的数据结构和算法知识。希望计算机科学专业的毕业生了解 big O 和树的基本知识是合理的。大多数人不会记得 Dijkstra 算法，也不会记得 AVL 树是如何工作的。
+
+如果你的面试问题需要晦涩的知识，问问自己：这真的是一项重要的技能吗？它是否做够重要，以至于我不惜减少雇佣的候选人的数量，或者减少我对候选人解决问题能力或其他技能的关注度？
+
+你评估的每项新的技能或属性都会减少 offer 的发放数量，除非你通过放宽对另一项技能的要求来平衡这一点。当然，在候选人其他条件都相同的情况下，你可能更喜欢能背诵两英寸厚的算法教科书中详细内容的人。但是实际上候选人的其他条件是不一样的。
+
+#### 避免出现“吓人的”问题。
+
+有些问题会吓到候选人，因为这些问题看起来好像涉及到了一些专业知识，即使它们实际上并没有。这通常包括以下问题：
+
+- 数学或概率。
+- 底层知识（内存分配等）。
+- 系统设计或可扩展性。
+- 专有系统（Google 地图等）。
+
+例如，我有时会问的一个问题是找出 1000 以下的满足 a^3 + b^3 = c^3 + d^3的所有正整数解（第68页）。
+
+首先，许多候选人会认为他们必须对上面这种或其他比较高级数学做一些花哨的因式分解。其实他们并不需要这么做。他们只需要了解指数、总和与相等这些概念，仅此而已。
+
+当我问这个问题时，我明确地说，“我知道这听起来像一个数学问题。别担心。它不是。这是一个算法问题。”如果他们开始沿着因式分解的道路走下去，我会阻止他们，并提醒他们这不是一个数学问题。
+
+其他问题可能涉及一些概率。它可能是候选人肯定知道的东西（例如，从5个选项中选择一个，从1到5中选择一个随机数），但事实上仅仅因为它包含概率就会吓到候选人。
+
+问一些听起来吓人的问题要小心。记住，面试本身对候选人来说已经是非常紧张了。加上一个“吓人的”问题可能只会让候选人感到更加慌乱，从而导致他表现不佳。
+
+如果你要问一个听起来“很吓人”的问题，那么你要确保让候选人放心，这个问题并不需要他们下意识以为要使用到的知识。
+
+#### 给予积极的心理强化。
+
+有些面试官过于关注“正确”的问题，以至于忘了考虑自己的行为。
+
+许多候选人被面试吓倒了，他们试着去理解面试官的每一个字。他们会抓住每一件听起来可能是积极或消极的事情不放。他们会把“祝你好运”这句话理解为某种意义，即使你对每个人都说了这句话，无论其表现如何。
+
+你需要让候选人对面试体验、对你以及自己的表现感到满意。你要使他们感到轻松自在。一个紧张的候选人会表现得很差，但这并不意味着他们不好。此外，一个对你或公司有负面感受的优秀的候选人不太可能接受 offer——他们也可能劝阻他们的朋友不要到你这儿面试或接受 offer。
+
+试着对候选人热情友好。可能有些人很容易做到这一点而有些人不行，但是要尽你最大的努力。
+
+即使你不是天生热情友好的人，你也可以在整个面试过程中努力说一些积极的话：
+
+- “对，没错。”
+- “很好的观点。”
+- “做的不错。”
+- “是的，这是一个非常有趣的方法。”
+- “完美。”
+
+不管候选人表现得有多差，总有一些事情是他们做对了的。想办法在面试中注入一些积极的因素。
+
+#### 深入挖掘工作经历问题。
+
+你问他们一个关于工作中遇到的具有挑战性的场景的问题，他们会告诉你他们团队所面临过的困境。那从你的角度看来，这位候选人并没有做太多事情。
+
+不过不要那么快下结论。候选人可能只是不会专注于自己，因为他们在以往的工作中都是庆祝团队的成就，而不是吹嘘自己。这在担任领导职务的人和女性候选人中尤其常见。
+
+不要仅仅因为你理解不了一个候选人做了什么，就认为他在某种情况下没有做什么事情。（委婉地）说出情况。具体询问他们是否可以告诉你他们的角色是什么。
+
+如果这听起来并不是真的解决了困难的问题，那么，再一次，深入探究。让他们更详细地说明他们是如何看待这个问题的，以及他们采取了哪些不同的步骤。问问他们为什么要采取某些行动。不描述自己所采取行动的细节只能说明他们是一个有瑕疵的候选人，但不一定是一个有瑕疵的员工。
+
+成为一名优秀的面试候选人本身就是一项能力（毕竟，这也是本书存在的原因之一），而且你可能不想对这项能力进行评估。
+
+#### 指导你的候选人。
+
+通读有关候选人如何开发良好算法的章节。这些建议中有很多是你可以提供给那些正在挣扎的候选人的。当你这样做时，你并不是在“教如何面试”，你只是把他们的面试能力与工作能力给分开了。
+
+- 很多候选人不会用一个例子来帮助解决面试问题（或者他们不会用一个好的例子）。这大大增加了他们给出答案的难度，但这并不一定意味着他们不是很好的问题解决者。如果候选人自己没有写一个例子，或者他们无意中写了一个特殊的用例，请指导他们。
+- 有些候选人需要很长时间才能找到 bug，因为他们使用了一个非常大的用例。这并不会使他们成为一个糟糕的测试人员或开发人员。这只是意味着他们没有意识到，先从概念上分析他们的代码会更有效，或者一个小的例子几乎可以工作得一样好。引导他们。
+- 如果他们在找到最优解之前就开始深入研究代码，那么把他们拉回来，把注意力集中在算法上（如果这是你想看到的）。如果是因为候选人真的没有时间，就说他从未找到或实现过最优解决方案，那绝对是不公平的。
+- 如果他们感到紧张不安，不知道下一步该怎么做时，可以建议他们先使用通过蛮力（brute force）解决的方案，再寻找可以优化的方面。
+- 如果他们什么都没说，而且这道题有一种相当明显的蛮力解决方法时，提醒他们先从蛮力开始是没关系的。他们的第一个解决方案不一定必须是完美的。
+
+即使你认为候选人在这些方面的能力是一个重要因素，但这并不是唯一的因素。你完全可以将某人标记为“未通过”此障碍，但同时要帮助并引导他们越过这一障碍。
+
+虽然这本书的目的是指导候选人通过面试，但作为面试官，你的目标之一就是消除候选人没有准备对面试表现的影响。毕竟，有些候选人已经为面试做过准备，而有些则没有，但这可能并不能充分说明他们作为工程师的能力。
+
+使用本书中的建议指导候选人（当然，要在合理的范围内——毕竟你不希望因为过多地指导候选人，以至于无法评估他们解决问题的能力）。
+
+不过在这里要小心。如果你本身就使候选人生畏，那这种指导可能会让事情变得更糟。当你告诉候选人，他们在不断地创建错误的例子，没有优先考虑正确的测试方法，等等，这往往会把事情搞砸。
+
+#### 如果他们想要安静，就给他们安静。
+
+候选人最常问我的一个问题是，当他们只需要安静地思考一会儿的时候，面试官却执意要开口说话，他们该如何应对这种情况。
+
+如果你的候选人需要安静，那就给他时间思考。学会区分候选人的 “我被困住了，不知道该做什么” 和 “我在默默地思考” 这两种状态。
+
+这可能会帮你来决定是否要指导你的候选人，因为你的指导可能会帮助到很多候选人，但这不一定会帮助到所有的候选人。因为有些人反而需要一点时间来自己思考。给他们时间，这样当你评估他们的时候，就要考虑到他们得到的指导比其他人少。
+
+####了解你的模式：常规检查、质量、专家级和指代型。
+
+在非常非常高的层次上，有四种问题模式：
+
+- **常规检查**：这些通常是简单的问题解决型（problem-solving）问题或设计问题。它们被用来评估候选人解决问题的最低能力。不能通过这些问题来区分候选人的能力是 “okay” 还是 “great”。你可以在面试流程早期使用这类问题（过滤掉最差的候选人），或者当你只是需要最低程度能力的候选人时也可以使用。
+- **质量检查**：这些都是更具挑战性的问题，通常在问题解决或设计中。这类问题被设计得比较严谨，真正需要候选人去思考。当算法/解决问题的技能非常重要时，使用这些技巧。在这种情况下，面试官犯的最大的错误是问一些实际上不是很好的问题解决型问题。
+- **专家级问题**：这些问题用于测试特定主题的知识，例如 Java 或机器学习。一项技能，只有当一个优秀的工程师在工作中不能快速学会时，才应该使用专业问题对其进行考察。这些问题必须确实是专家级别的问题。不幸的是，我曾经遇到过这样的情况，一家公司询问刚刚完成了为期 10 周的编程训练营的候选人有关 Java 的详细问题。这又能说明什么呢？如果她有这方面的知识，那么这也只是她最近才学到、并且轻松掌握的知识。如果这项技能很容易学会，那么就没有理由以此来决定候选人是否被雇佣。
+- **指代型知识**：这是一种不太专业的知识（事实上，你甚至可能不需要它），但是你希望与他们级别相同的候选人知道。例如，如果候选人知道CSS或HTML，这对你来说可能不是很重要。但是，如果候选人深入研究了这些技术，却不能谈论为什么表格好或不好，这就说明了一个问题。他们没有在工作中吸收核心信息。
+- **代理知识**：这不是专家级别的知识（实际上，你甚至可能不需要它），但是你希望这种级别的候选人能够了解这些。例如，如果候选人知道 CSS 或 HTML，这对你来说可能不是很重要。但是，如果候选人已经深入研究了这些技术，却不能谈论为什么 table 好或不好，这就说明了一个问题。他们没有在工作中吸收核心信息。
+
+当一家公司面试时将这些因素混乱搭配时，就会遇到麻烦：
+
+- 他们向不是专家的人询问专家问题。
+- 当他们不需要专家时，他们却雇佣了专家。
+- 他们需要专家，但面试却只是评估了基本技能。
+- 他们在询问常规检查（简单）问题，却认为自己问的是质量检查问题。因此，他们对候选人的表现给出了 “okay” 或 “great” 的评价，事实上这会使候选人微小的差别被错误地放大。
+
+实际上，在与许多大大小小的科技公司合作进行招聘时，我发现大多数公司都至少做错了其中的一件事。
