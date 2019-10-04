@@ -34,7 +34,7 @@
 #### VI. Big O
 #### VII. Technical Questions
 #### VIII. The Offer and Beyond
-#### IX. Interview Questions
+#### [IX. 面试问题](IX.Interview_Questions.md)
 
 **数据结构**
 
