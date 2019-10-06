@@ -30,10 +30,10 @@
 #### [II. 幕后](II.Behind_the_Scenes.md)
 #### [III. 特殊情况](III.Special_Situations.md)
 #### [IV. 面试之前](IV.Before_the_Interview.md)
-#### V. Behavioral Questions
+#### V. 行为问题
 #### VI. Big O
-#### VII. Technical Questions
-#### VIII. The Offer and Beyond
+#### VII. 技术问题
+#### [VIII. Offer 及其他](VIII.The_Offer_and_Beyond.md)
 #### [IX. 面试问题](IX.Interview_Questions.md)
 
 **数据结构**
