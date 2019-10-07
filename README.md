@@ -30,7 +30,7 @@
 #### [II. 幕后](II.Behind_the_Scenes.md)
 #### [III. 特殊情况](III.Special_Situations.md)
 #### [IV. 面试之前](IV.Before_the_Interview.md)
-#### V. 行为问题
+#### [V. 行为问题](V.Behavioral_Questions.md)
 #### VI. Big O
 #### VII. 技术问题
 #### [VIII. Offer 及其他](VIII.The_Offer_and_Beyond.md)
