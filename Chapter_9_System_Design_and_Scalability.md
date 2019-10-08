@@ -247,6 +247,8 @@ MapReduce 允许我们并行地进行大量处理，这使得处理大量数据�
 下图说明了此过程。
 
 <div align=center><img src="img/ch9_1.png"/></div>
+
+
 ---
 
 ### Interview Questions

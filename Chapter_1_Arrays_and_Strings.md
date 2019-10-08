@@ -118,8 +118,8 @@ StringBuilder 可以帮你避免这个问题。StringBuilder 只是创建一个�
   Input: "Mr John Smith    ", 13
   Output: "Mr%20John%20Smith"
   ```
-
-​		*提示：#53, #118*
+  
+  *提示：#53, #118*
 
 
 
