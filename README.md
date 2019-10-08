@@ -62,7 +62,7 @@
 
 **附加复习题**
 
-- Chapter 16 I 中等
+- [Chapter 16 I 中等](Chapter_16_Moderate.md)
 - Chapter 17 I 困难
 
 #### [X. 答案](https://github.com/careercup/CtCI-6th-Edition)
