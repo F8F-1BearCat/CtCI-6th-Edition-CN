@@ -34,10 +34,10 @@
 
   EXAMPLE
 
-  ```
-Input: 25
-  Output: 9 (2, 12, 20, 21, 22, 23, 24 and 25. Note that 22 counts for two 2s.)
-  ```
+	```
+	Input: 25
+	Output: 9 (2, 12, 20, 21, 22, 23, 24 and 25. Note that 22 counts for two 2s.)
+	```
   
   *提示：#573, #672, #641*
   
@@ -47,12 +47,12 @@ Input: 25
 
   EXAMPLE
 
-  ```
-Input:
-  	Names: John (15), Jon (12), Chris (13), Kris (4), Christopher (19)
-  	Synonyms: (Jon, John), (John, Johnny), (Chris, Kris), (Chris, Christopher)
-Output: John (27), Kris (36)
-  ```
+	```
+	Input:
+	  	Names: John (15), Jon (12), Chris (13), Kris (4), Christopher (19)
+	  	Synonyms: (Jon, John), (John, Johnny), (Chris, Kris), (Chris, Christopher)
+	Output: John (27), Kris (36)
+	```
   
   *提示：#478, #493, #512, #537, #586, #605, #655, #675, #704*
   
@@ -62,11 +62,11 @@ Output: John (27), Kris (36)
 
   EXAMPLE
 
-  ```
-Input(ht,wt): (65, 100) (70, 150) (56, 90) (75, 190) (60, 95) (68, 110)
-  Output: The longest tower is length 6 and includes from top to bottom:
-(56, 90) (60,95) (65,100) (68,110) (70,150) (75,190)
-  ```
+	```
+	Input(ht,wt): (65, 100) (70, 150) (56, 90) (75, 190) (60, 95) (68, 110)
+	Output: The longest tower is length 6 and includes from top to bottom:
+	(56, 90) (60,95) (65,100) (68,110) (70,150) (75,190)
+	```
   
   *提示：#638, #657, #666, #682, #699*
   
@@ -82,10 +82,10 @@ Input(ht,wt): (65, 100) (70, 150) (56, 90) (75, 190) (60, 95) (68, 110)
 
   EXAMPLE
 
-  ```
-Input: 1 2 5 9 5 9 5 5 5
-  Output: 5
-  ```
+	```
+	Input: 1 2 5 9 5 9 5 5 5
+	Output: 5
+	```
   
   *提示：#522, #566, #604, #620, #650*
   
@@ -99,12 +99,12 @@ Input: 1 2 5 9 5 9 5 5 5
 
 - **17.12 BiNode**：考虑一个名为 BiNode 的简单数据结构，其中有指向其他两个节点的指针。
 
-  ```java
-public class BiNode {
-  	public BiNode node1, node2;
-		public int data;
-  }
-  ```
+	```java
+	public class BiNode {
+	  	public BiNode node1, node2;
+		  public int data;
+	  }
+	```
 
   数据结构 BiNode 可用于表示二叉树（其中 node1 是左节点，node2 是右节点）或双向链表（其中 node1 是前一个节点，node2 是下一个节点）。实现一个方法，将二叉搜索树（由 BiNode 实现）转换为双链表。应该按顺序保存这些值，并且在原地（即在原始数据结构上）执行操作。
 
@@ -133,10 +133,10 @@ public class BiNode {
 
   EXAMPLE
 
-  ```
-Input: cat, banana, dog, nana, walk, walker, dogwalker
-  Output: dogwalker
-  ```
+	```
+	Input: cat, banana, dog, nana, walk, walker, dogwalker
+	Output: dogwalker
+	```
   
   *提示：#475, #499, #543, #589*
   
@@ -146,10 +146,10 @@ Input: cat, banana, dog, nana, walk, walker, dogwalker
 
   EXAMPLE
 
-  ```
-Input: {30, 15, 60, 75, 45, 15, 15, 45}
-  Output:180 minutes ({30, 60, 45, 45}).
-  ```
+	```
+	Input: {30, 15, 60, 75, 45, 15, 15, 45}
+	Output:180 minutes ({30, 60, 45, 45}).
+	```
   
   *提示：#495, #504, #576, #526, #542, #554, #562, #568, #578, #587, #607*
   
@@ -165,7 +165,7 @@ Input: {30, 15, 60, 75, 45, 15, 15, 45}
 
   EXAMPLE
 `Input: `{1, 5, 9} | {7, 5, 9, 0, 2, 1, 3, <u>5, 7, 9, 1,</u> 1, 5, 8, 8, 9, 7}
-  `Output: `[7, 10] （上面划线部分）
+`Output: `[7, 10] （上面划线部分）
 
   *提示：#645, #652, #669, #687, #697, #725, #731, #741*
   
@@ -188,10 +188,10 @@ Input: {30, 15, 60, 75, 45, 15, 15, 45}
   EXAMPLE （黑条是直方图。灰色是水。）
 
   <div align=center><img src="img/ch17_1.png"/></div>
-  ```
-  Input: {0, 0, 4, 0, 0, 6, 0, 0, 3, 0, 5, 0, 1, 0, 0, 0}
-Output: 26
-  ```
+	```
+	Input: {0, 0, 4, 0, 0, 6, 0, 0, 3, 0, 5, 0, 1, 0, 0, 0}
+	Output: 26
+	```
   
   *提示：#629, #640, #657, #658, #662, #676, #693, #734, #742*
   
@@ -201,10 +201,10 @@ Output: 26
 
   EXAMPLE
 
-  ```
-Input: DAMP, LIKE
-  Output: DAMP-> LAMP-> LIMP-> LIME-> LIKE
-  ```
+	```
+	Input: DAMP, LIKE
+	Output: DAMP-> LAMP-> LIMP-> LIME-> LIKE
+	```
   
   *提示：#506, #535, #556, #580, #598, #618, #738*
   
@@ -236,17 +236,17 @@ Input: DAMP, LIKE
 
   EXAMPLE
 
-  ```
-Input:
-  13: {14, 15, 100, 9, 3}
-16: {32, 1, 9, 3, 5}
-  19: {15, 29, 2, 6, 8, 7}
-24: {7, 10}
-  Output:
-ID1, ID2 : SIMILARITY
-  13, 19   : 0.1
-13, 16   : 0.25
-  19, 24   : 0.14285714285714285
-  ```
+	```
+	Input:
+	  13: {14, 15, 100, 9, 3}
+	  16: {32, 1, 9, 3, 5}
+	  19: {15, 29, 2, 6, 8, 7}
+	  24: {7, 10}
+	Output:
+	  ID1, ID2 : SIMILARITY
+	  13, 19   : 0.1
+	  13, 16   : 0.25
+	  19, 24   : 0.14285714285714285
+	```
   
   *提示：#484, #498, #510, #518, #534, #547, #555, #561, #569, #577, #584, #603, #611, #636*
