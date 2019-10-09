@@ -392,6 +392,8 @@ BFS 没有那么直观，许多求职者在实现 BFS 时都会感觉到很纠�
   ```
 
   <div align=center><img src="img/ch4_14.png"/></div>
+  
+
   ```
   Output: {2, 1, 3}, {2, 3, 1}
   ```

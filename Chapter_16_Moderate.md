@@ -184,15 +184,16 @@
 
   <div align=center><img src="img/ch16_1.png"/></div>
 
-  EXAMPLE
-
-  ```
-Input: 8733
+  
+EXAMPLE
+  
+```
+  Input: 8733
   Output: tree, used
   ```
   
-  *提示：#477, #487, #654, #703, #726, #744*
-
+*提示：#477, #487, #654, #703, #726, #744*
+  
   
 
 
