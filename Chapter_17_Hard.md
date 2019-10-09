@@ -102,7 +102,7 @@
 	```java
 	public class BiNode {
 	  	public BiNode node1, node2;
-		  public int data;
+		public int data;
 	  }
 	```
 
@@ -188,6 +188,7 @@
   EXAMPLE （黑条是直方图。灰色是水。）
 
   <div align=center><img src="img/ch17_1.png"/></div>
+	
 	```
 	Input: {0, 0, 4, 0, 0, 6, 0, 0, 3, 0, 5, 0, 1, 0, 0, 0}
 	Output: 26
