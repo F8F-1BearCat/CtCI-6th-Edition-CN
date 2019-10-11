@@ -31,7 +31,7 @@
 #### [III. 特殊情况](III.Special_Situations.md)
 #### [IV. 面试之前](IV.Before_the_Interview.md)
 #### [V. 行为问题](V.Behavioral_Questions.md)
-#### VI. Big O
+#### [VI. Big O](VI.Big_O.md)
 #### VII. 技术问题
 #### [VIII. Offer 及其他](VIII.The_Offer_and_Beyond.md)
 #### [IX. 面试问题](IX.Interview_Questions.md)
