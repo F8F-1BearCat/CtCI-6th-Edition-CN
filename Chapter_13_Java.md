@@ -134,3 +134,57 @@ HashMap：HashMap 集合无论是在面试中，还是在实际工作中都被�
 
 ------
 
+请注意，由于本书中几乎所有的解决方案都是用 Java 实现的，因此本章我们仅选择了少数问题。此外，这些问题中的大多数都是关于语言的“琐事（trivia）”，因为本书的其余部分都是关于 Java 编程的问题。
+
+- **13.1 私有构造函数（Private Constructor）**：在继承方面，保持构造函数私有的作用是什么？
+
+  *提示：#404*
+
+  
+
+- **13.2 从 Finally 返回（Return from Finally）**：在 Java 中，如果我们在 try-catch- Finally 的 try 块中插入一个 return 语句，那么 Finally 块会被执行吗？
+
+  *提示：#409*
+
+  
+
+- **13.3 Final等（Final, etc.）**：final、finally 和 finalize 的区别是什么？
+
+  *提示：#412*
+
+  
+
+- **13.4 泛型与模板（Generics vs. Templates）**：解释 C++ 中的模板与 Java 中的泛型的区别。
+
+  *提示：#416, #425*
+
+  
+
+- **13.5 TreeMap, HashMap, LinkedHashMap**：解释 TreeMap、HashMap 和 LinkedHashMap 之间的区别。提供一个例子，说明什么时候使用哪个是最好的。
+
+  *提示：#420, #424, #430, #454*
+
+  
+
+- **13.6 对象反射（Object Reflection）**：解释 Java 中什么是对象反射以及为什么有用。
+
+  *提示：#435*
+
+  
+
+- **13.7 Lambda表达式（Lambda Expressions）**：有一个 Country 类，它有方法 `getContinent()` 和 `getPopulation()`。编写一个函数 `int getPopulation(List<Country> countries, String continent)`，计算给定大陆的总人口，并给出所有国家/地区的列表以及大陆的名称。
+
+  *提示：#448, #467, #464*
+
+  
+
+- **13.8 Lambda Random**：使用 Lambda 表达式，编写一个函数 `List<Integer> getRandomSubset ( List< Integer> list)`， 以返回任意大小的随机子集。所有的子集（包括空集）被选择的概率都应该是相同的。
+
+  *提示：#443, #450, #457*
+
+  
+
+**附加问题**：数组和字符串(#1.3)，面向对象设计(#7.12)，线程和锁(#15.3)
+
+提示从第 676 页开始。
+

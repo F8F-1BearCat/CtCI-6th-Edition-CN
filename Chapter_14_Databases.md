@@ -146,13 +146,11 @@ StudentCourses： CourseID*, StudentID*
 如果 Building 与 Apartment 是一对多关系（一栋 Building 有很多 Apartment），那么我们可以这样表示：
 
 <div align=center><img src="img/ch14_1.png"/></div>
-
 请注意，Apartments 表通过一个 BuildingID 列连接到 Buildings 表。
 
 如果我们要考虑一个人租多套公寓的可能性，我们可能需要实现多对多关系，如下所示：
 
 <div align=center><img src="img/ch14_2.png"/></div>
-
 TenantApartments 表存储了 Tenants 和 Apartments 之间的关系。
 
 #### Step 4：研究操作
@@ -169,5 +167,53 @@ TenantApartments 表存储了 Tenants 和 Apartments 之间的关系。
 
 ------
 
+问题 1 至 3 涉及本章末尾的 database schema。每个 apartment 可以有多个 tenant，每个 tenant 可以有多个 apartment。每个 apartment 属于一个 building，每个 building 属于一个 complex。
 
+- **14.1 多个公寓（Multiple Apartments）**：编写一个 SOL 查询，以获取租用多个公寓的租户列表。
+
+  *提示：#408*
+
+  
+
+- **14.2 Open Requests**：编写一个 SQL 查询，来获得所有 building 的列表以及 Open Requests 的数量（status 等于 Open 的 Requests）。
+
+  *提示：#411*
+
+  
+
+- **14.3 关闭所有请求（Close All Requests）**：Building #11 正在进行重大装修。实现一个查询来关闭此大楼中公寓的所有请求。
+
+  *提示：#431*
+
+  
+
+- **14.4 连接（Joins）**：连接的类型有哪些？ 请说明它们之间的区别以及为什么某些类型在某些情况下会更好。
+
+  *提示：#451*
+
+  
+
+- **14.5 反范式（Denormalization）**：什么是反范式？解释利弊。
+
+  *提示：#444, #455*
+
+  
+
+- **14.6 E-R 图（Entity-Relationship Diagram）**：绘制一个包含公司（companies）、人员（people）和专业人员（professionals，在公司工作的人员）的数据库的 E-R 图。
+
+  *提示：#436*
+
+  
+
+- **14.7 设计成绩数据库（Design Grade Database）**：想象一个简单的存储学生成绩信息的数据库。设计这个数据库可能的样子，并提供一个 SQL 查询来返回一个优等生（前10%）的列表，按他们的平均成绩排序。
+
+  *提示：#428, #442*
+
+  
+
+**附加问题**：面向对象的设计(#7.7)，系统设计和可伸缩性(#9.6)
+
+提示从第 676 页开始。
+
+<div align=center><img src="img/ch14_3.png"/></div>
 
