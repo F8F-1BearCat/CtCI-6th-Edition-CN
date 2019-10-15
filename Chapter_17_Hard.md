@@ -117,7 +117,8 @@
   EXAMPLE:
 
   `Input: jesslookedjustliketimherbrother`
-  `Output:` <u>jess</u> looked just like <u>tim</u> her brother (7 unrecognized characters)
+
+  `Output:` <u>_jess_</u> looked just like <u>_tim_</u> her brother (7 unrecognized characters)
 
   *提示：#496, #623, #656, #677, #739, #749*
 
@@ -164,11 +165,13 @@
 - **17.18 最短超序列（Shortest Supersequence）**：给你两个数组，一个数组较短（其中所有元素都不同），另一个数组较长。在较长数组中，找到包含较短数组中所有元素的最短子数组。其中短数组中的这些项可以在子数组中按任何顺序出现。
 
   EXAMPLE
-`Input: `{1, 5, 9} | {7, 5, 9, 0, 2, 1, 3, <u>5, 7, 9, 1,</u> 1, 5, 8, 8, 9, 7}
-`Output: `[7, 10] （上面划线部分）
+
+  `Input: `{1, 5, 9} | {7, 5, 9, 0, 2, 1, 3, <u>_5, 7, 9, 1,_</u> 1, 5, 8, 8, 9, 7}
+
+  `Output: `[7, 10] （上面划线部分）
 
   *提示：#645, #652, #669, #687, #697, #725, #731, #741*
-  
+
   
 
 - **17.19 缺失两个（Missing Two）**：你将得到一个数组，其中从 1 到 N 的所有数字仅出现一次，但缺少一个数字。如何在 O(N) 时间 和 O(1) 空间内找到缺失的数字？ 如果缺少两个数字怎么办？
@@ -188,12 +191,11 @@
   EXAMPLE （黑条是直方图。灰色是水。）
 
   <div align=center><img src="img/ch17_1.png"/></div>
-	
 	```
 	Input: {0, 0, 4, 0, 0, 6, 0, 0, 3, 0, 5, 0, 1, 0, 0, 0}
 	Output: 26
 	```
-  
+	
   *提示：#629, #640, #657, #658, #662, #676, #693, #734, #742*
   
   
