@@ -1,0 +1,303 @@
+<!DOCTYPE HTML>
+<html lang="cn" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>译者序 - CtCI-6th-Edition-CN</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">CtCI-6th-Edition-CN</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/magicwenli/CtCI-6th-Edition-CN/tree/master" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/magicwenli/CtCI-6th-Edition-CN/edit/master/.//README.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="破解编码面试---中文翻译"><a class="header" href="#破解编码面试---中文翻译">破解编码面试 - 中文翻译</a></h1>
+<ul>
+<li>作者： <a href="http://www.gayle.com/contact/">Gayle Laakmann McDowell</a></li>
+<li>原书名称：<a href="https://www.amazon.com/Cracking-Coding-Interview-6th-Edition/dp/0984782850">Cracking the Coding Interview: 189 Programming Questions and Solutions</a></li>
+<li>译者：<a href="https://f8f-1bearcat.github.io/about/">F8F-1BearCat</a></li>
+</ul>
+<div align=center><img src="img/Cover.jpg"/></div>
+<h2 id="译者序"><a class="header" href="#译者序">译者序</a></h2>
+<p>译者摸鱼的时候喜欢逛一亩三分地论坛，在 <code>终身学习&gt;刷题</code> 板块里偶然发现了 CtCI 这本书。本书被誉为北美码农求职面试经典书籍，因书中包含 189 道编码题，所以也被称为 CC189，更早的版本为 CC150。</p>
+<p>这本书介绍了 Microsoft、Google 等一线互联网公司的面试流程，讲解了该怎样准备面试、怎样回答技术问题，还单独拿出一些篇幅教你如何评估选择 Offer 以及如何跟 HR 进行 Negotiation。 当然，有关时间复杂度、空间复杂度以及具体的面试题目才是本书的重点。</p>
+<p>本书的 189 道题目以数据机构和算法为主，其题目及答案占据了本书绝大部分的内容。此外，分别有一个章节涵盖分布式系统设计、C/C++、Java、数据库、多线程等知识性的内容，但是这些内容几乎都是浅尝辄止，旨在为读者提供一个简略却系统的知识框架，让读者可以根据自己的薄弱环节有目的的去强化训练。这 189 道题涵盖了编程面试中你可能遇到的大部分题型，题目有易有难，且所有题目都给出了比较常规的解题思路和答案，其中算法题目的实现使用了 Java 语言。当然有些解法不是最优，如果你有兴趣的话可以在此基础上自己尝试给出最优解。</p>
+<p>就好比考 GMAT 之前要看 OG 一样，本书是针对编程面试的入门书籍。如果你工作多年，需要重新将数据结构和算法捡起来的话，本书很适合你；但如果你是打过 ACM 等算法比赛的大牛，或者从事与算法相关的工作，那这本书就可以直接跳过了。由于是面向编码面试的，本书自然不能避免其功利性，如果纯粹是想学习算法，可以去看一看 Programming Pearls 等书。本书的题目与实际面试相比还是稍简单的，如果你想进一步提升的话，建议到 Leetcode 上刷题，并自己消化总结。</p>
+<p>顺便一提，一亩三分地论坛还经常提到另一本书：<a href="https://www.amazon.com/Programming-Interviews-Exposed-Secrets-Landing/dp/1118261364/?&amp;_encoding=UTF8&amp;tag=1point3acres-20&amp;linkCode=ur2&amp;linkId=f4a9f284abef2e91bbc0bc39a9cc3967&amp;camp=1789&amp;creative=9325">Programming Interview Exposed</a>，这本书更基础一点，非科班零基础的小白可以尝试先从这本书入手。</p>
+<p>最后，译者在此建议，有能力的读者最好还是去阅读本书的英文原版。</p>
+<h2 id="目录"><a class="header" href="#目录">目录</a></h2>
+<h4 id="序"><a class="header" href="#序"><a href="Foreword.html">序</a></a></h4>
+<h4 id="引言"><a class="header" href="#引言"><a href="Introduction.html">引言</a></a></h4>
+<h4 id="i-面试过程"><a class="header" href="#i-面试过程"><a href="I.The_Interview_Process.html">I. 面试过程</a></a></h4>
+<h4 id="ii-幕后"><a class="header" href="#ii-幕后"><a href="II.Behind_the_Scenes.html">II. 幕后</a></a></h4>
+<h4 id="iii-特殊情况"><a class="header" href="#iii-特殊情况"><a href="III.Special_Situations.html">III. 特殊情况</a></a></h4>
+<h4 id="iv-面试之前"><a class="header" href="#iv-面试之前"><a href="IV.Before_the_Interview.html">IV. 面试之前</a></a></h4>
+<h4 id="v-行为问题"><a class="header" href="#v-行为问题"><a href="V.Behavioral_Questions.html">V. 行为问题</a></a></h4>
+<h4 id="vi-big-o"><a class="header" href="#vi-big-o"><a href="VI.Big_O.html">VI. Big O</a></a></h4>
+<h4 id="vii-技术问题"><a class="header" href="#vii-技术问题"><a href="VII.Technical_Questions.html">VII. 技术问题</a></a></h4>
+<h4 id="viii-offer-及其他"><a class="header" href="#viii-offer-及其他"><a href="VIII.The_Offer_and_Beyond.html">VIII. Offer 及其他</a></a></h4>
+<h4 id="ix-面试问题"><a class="header" href="#ix-面试问题"><a href="IX.Interview_Questions.html">IX. 面试问题</a></a></h4>
+<p><strong>数据结构</strong></p>
+<ul>
+<li><a href="Chapter_1_Arrays_and_Strings.html">Chapter 1 I 数组和字符串</a></li>
+<li><a href="Chapter_2_Linked_Lists.html">Chapter 2 I 链表</a></li>
+<li><a href="Chapter_3_Stacks_and_Queues.html">Chapter 3 I 栈和队列</a></li>
+<li><a href="Chapter_4_Trees_and_Graphs.html">Chapter 4 I 树和图</a></li>
+</ul>
+<p><strong>概念和算法</strong></p>
+<ul>
+<li><a href="Chapter_5_Bit_Manipulation.html">Chapter 5 I 位操作</a></li>
+<li><a href="Chapter_6_Math_and_Logic_Puzzles.html">Chapter 6 I 数学和逻辑难题</a></li>
+<li><a href="Chapter_7_Object-Oriented_Design.html">Chapter 7 I 面向对象的设计</a></li>
+<li><a href="Chapter_8_Recursion_and_Dynamic_Programming.html">Chapter 8 I 递归和动态规划</a></li>
+<li><a href="Chapter_9_System_Design_and_Scalability.html">Chapter 9 I 系统设计和可扩展性</a></li>
+<li><a href="Chapter_10_Sorting_and_Searching.html">Chapter 10 I 排序与搜索</a></li>
+<li><a href="Chapter_11_Testing.html">Chapter 11 I 测试</a></li>
+</ul>
+<p><strong>基础知识</strong></p>
+<ul>
+<li><a href="Chapter_12_C_and_C++.html">Chapter 12 I C 和 C++</a></li>
+<li><a href="Chapter_13_Java.html">Chapter 13 I Java</a></li>
+<li><a href="Chapter_14_Databases.html">Chapter 14 I 数据库</a></li>
+<li><a href="Chapter_15_Threads_and_Locks.html">Chapter 15 I 线程和锁</a></li>
+</ul>
+<p><strong>附加复习题</strong></p>
+<ul>
+<li><a href="Chapter_16_Moderate.html">Chapter 16 I 中等</a></li>
+<li><a href="Chapter_17_Hard.html">Chapter 17 I 困难</a></li>
+</ul>
+<h4 id="x-答案"><a class="header" href="#x-答案"><a href="https://github.com/careercup/CtCI-6th-Edition">X. 答案</a></a></h4>
+<h4 id="xi-进阶主题"><a class="header" href="#xi-进阶主题">XI. 进阶主题</a></h4>
+<h4 id="xii-代码库"><a class="header" href="#xii-代码库"><a href="XII.Code_Library.html">XII. 代码库</a></a></h4>
+<h4 id="xiii-提示"><a class="header" href="#xiii-提示">XIII. 提示</a></h4>
+<h4 id="xiv-关于作者"><a class="header" href="#xiv-关于作者"><a href="XIV.About_the_Author.html">XIV. 关于作者</a></a></h4>
+<p>注：本书的 <code>X. 答案</code> 部分为编码答案，本项目中不做翻译收录，需要阅读的同学可以阅读英文原版，或者 <em>CareerCup</em> 的这个项目：https://github.com/careercup/CtCI-6th-Edition 。</p>
+<h2 id="法律声明"><a class="header" href="#法律声明">法律声明</a></h2>
+<blockquote>
+<p>《中华人民共和国著作权法》
+第四节 权利的限制
+第二十二条　在下列情况下使用作品，可以不经著作权人许可，不向其支付报酬，但应当指明作者姓名、作品名称，并且不得侵犯著作权人依照本法享有的其他权利：
+(六)为学校课堂教学或者科学研究，翻译或者少量复制已经发表的作品，供教学或者科研人员使用，但不得出版发行;</p>
+</blockquote>
+<p>本项目是出于个人兴趣及学习目的而建立，仅供交流与学习研究之用，严禁公开传播发行或用于商业用途。有能力阅读英文书籍者请购买原版支持。</p>
+<p><strong>APPEND</strong>：经 v2ex 网友提醒，本书官方中文版本已出版，中文名为程序员面试金典（译者在此忍不住吐槽此译名），第六版发行日期为 19 年 9 月份，难怪译者当时没找到。所以在此译者建议大家有需要的话通过官方渠道购买书籍，本项目可以做译文对比、沟通交流之用，感谢大家的支持。</p>
+<h2 id="license"><a class="header" href="#license">LICENSE</a></h2>
+<p>本项目中的文档是根据 CC BY-NC-SA 4.0 许可协议授权的，该协议鼓励您共享这些文档。</p>
+<p>详情见：<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际  (CC BY-NC-SA 4.0)</a></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                            <a rel="next prefetch" href="Foreword.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+                    <a rel="next prefetch" href="Foreword.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

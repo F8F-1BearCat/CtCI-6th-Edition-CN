@@ -1,0 +1,445 @@
+<!DOCTYPE HTML>
+<html lang="cn" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>III. 特殊情况 - CtCI-6th-Edition-CN</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">CtCI-6th-Edition-CN</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/magicwenli/CtCI-6th-Edition-CN/tree/master" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/magicwenli/CtCI-6th-Edition-CN/edit/master/.//III.Special_Situations.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="iii-特殊情况"><a class="header" href="#iii-特殊情况">III. 特殊情况</a></h1>
+<p>促使某人读这本书的原因有很多。或许是你工作经验丰富，但从未进行过此类面试。或许你是一名测试人员或 PM。或许你实际上是在使用这本书来教自己如何更好地进行面试。这些“特殊情况（special situations）”都能在本章有所收获。</p>
+<h3 id="有经验的候选人"><a class="header" href="#有经验的候选人">有经验的候选人</a></h3>
+<p>有些人认为，你在本书中看到的算法类问题只适用于应届毕业生，这并不完全正确。</p>
+<p>更有经验的工程师可能会发现面试中对算法问题的关注略有减少——但也只是略有减少。</p>
+<p>如果一家公司向没有经验的候选人提出算法问题，他们往往也会向有经验的候选人提出。无论对错，他们都认为这些问题中展示的技能对所有开发人员都很重要。</p>
+<p>一些面试官可能会对有经验的候选人的标准有所较低。毕竟，这些候选人已经多年没有上过算法课了。他们缺乏练习。</p>
+<p>另一些人则对有经验的候选人提出了更高的标准，他们的理由是，更多的经验使候选人可以看到更多类型的问题。</p>
+<p>平均而言，两种观点是平衡的。</p>
+<p>这个规则的例外是系统设计和架构问题，以及有关于你简历的问题。通常情况下，学生不会学习太多系统架构的知识，所以只有在专业领域才能积累处理这方面问题的经验。你在此类面试问题中的表现将根据你的经验水平进行评估。然而，学生和应届毕业生仍然会被问到这些问题，他们应该做好准备，尽可能地解决这些问题。</p>
+<p>此外，经验丰富的候选人将被要求对诸如 “你遇到的最困难的 bug 是什么？” 等问题做出更深入的、更令人印象深刻的回答。如果你经验丰富，对这些问题的回答应该可以证明这一点。</p>
+<h3 id="测试人员和-sdet"><a class="header" href="#测试人员和-sdet">测试人员和 SDET</a></h3>
+<p>SDET（测试中的软件设计工程师，software design engineers in test）工作中需要编写代码，但是这些代码是用来测试功能而不是构建功能的。因此，他们必须既是出色的编码人员，又是出色的测试人员。需要双倍的准备工作！</p>
+<p>如果你要申请 SDET 职位，请采用以下方法来进行准备：</p>
+<ul>
+<li>准备核心测试问题：例如，你将如何测试一个灯泡？一支钢笔？ 一台收银机？Microsoft Word ？“测试，Testing” 一章将为你提供关于这些问题的更多背景知识。</li>
+<li>练习编码问题：SDET 被拒绝的首要原因是编码能力不够。虽然 SDET 的编码标准通常低于传统开发人员，但是仍期望 SDET 能有较强的编码和算法能力。在准备时，一定要练习解决普通开发人员可能遇到的所有相同的编码和算法问题。</li>
+<li>练习测试代码问题：一个非常流行的 SDET 问题格式是“编写代码以实现 X 功能”，紧接着就会被要求：“好的，现在对其进行测试。”即使问题不是特别要求这样做，你也应该问自己，“我将如何测试这个？”记住：任何问题都可能变成一个 SDET 问题！</li>
+</ul>
+<p>对于测试人员来说，良好的沟通技巧也非常重要，因为你的工作需要你与许多不同的人一起工作。不要忽视 “行为问题，Behavioral Questions”  这一章的内容。</p>
+<h4 id="职业建议"><a class="header" href="#职业建议">职业建议</a></h4>
+<p>最后，给你一个职业建议：如果你像许多候选人一样，希望通过申请 SDET 职位这种“简单”的方式进入某个公司，那你该知道的是，许多候选人发现从 SDET 职位转到开发职位非常困难。如果你计划这样做的话，请确保你的编码和算法技能非常突出，并尝试在一到两年内转换职位。否则，你可能会发现在开发面试中很难被认真对待。</p>
+<p>永远不要让你的编程技能退化。</p>
+<h3 id="产品和项目-经理"><a class="header" href="#产品和项目-经理">产品（和项目） 经理</a></h3>
+<p>这些 “PM” 角色在不同的公司甚至在同一公司内部都有很大的差异。例如，在 Microsoft，一些 PM 本质上可能是客户传道者（customer evangelists），扮演着与市场营销沾边的面向客户的角色。不过，在整个园区里，其他 PM 可能需要花费很多时间进行编码。后一种 PM 的职位在面试时可能会对候选人在编码上进行测试，因为这是其工作功能的重要部分。</p>
+<p>一般来说，负责 PM 职位的面试官希望候选人能展示以下方面的技能：</p>
+<ul>
+<li>处理模棱两可：这通常不是面试中最关键的部分，但你也应该知道面试官确实看重候选人这方面的能力。面试官希望看到的是，当面对一个模棱两可的情况时，你不会不知所措，也不会停滞不前。他们希望看到你能够正面处理问题：寻找新信息，优先处理最重要的部分，并以结构化的方式解决问题。这通常在面试中不会直接考察（虽然可以），但在面试问题的回答中，面试官会留意候选人这方面的特质。</li>
+<li>以用户为中心（态度）：面试官希望看到你以用户为中心的态度。你认为每个人都会像你一样使用这个产品吗？或者，你是那种设身处地为客户着想，试图理解他们想如何使用产品的人？诸如 “为盲人设计一个闹钟” 之类的问题已经成熟，可以用来考察候选人这一方面的特质。当你听到这样的问题时，一定要问很多问题来了解用户是谁，以及他们如何使用产品。“测试，Testing ” 一章中涉及的技能与此密切相关。</li>
+<li>以用户为中心（技术技能）：一些拥有更复杂产品的团队需要确保他们的 PM 对产品有更深刻的理解，因为在工作中很难获得这些知识。在 Android 或 Windows Phone 的团队中，可能不需要具备深入的手机技术知识（尽管这仍然是件好事），而在 Windows Security 团队中，对安全性相关知识的了解可能是必要的。希望你不会去面试一个需要特殊技能的团队，除非你至少声称自己已经拥有了必要的技能。</li>
+<li>多级沟通：PM 需要能够与公司各个级别的人员沟通，跨越多个职位和技术技能范围。面试官希望看到你在沟通中拥有这种灵活性。这通常是通过诸如 “向祖母解释 TCP/IP” 之类的问题来直接检验的。也可能通过与你讨论先前项目的方式来评估你的沟通技巧。</li>
+<li>对技术的热情：快乐的员工是富有生产力的员工，因此公司想要确保你会喜欢这份工作，并对你的工作内容感到兴奋。对技术的热情——最好是对公司或团队的热情——应该体现在你的回答中。你可能会被直接问到这样的问题，例如 “你为什么对微软感兴趣？”此外，面试官会在你如何谈论你以前的经历，以及你如何谈论团队的挑战时，来发现你对工作的热情。他们想看到的是，你会渴望面对工作中的挑战。</li>
+<li>团队合作/领导力：这可能是面试中最重要的方面，而且，毫不奇怪，在工作中也是最重要的。所有的面试官都会考察你与他人合作的能力。最常见的评估方法是这样的：“请给出一个队友没有尽到自己职责的例子”。面试官希望看到你能很好地处理冲突，你能采取主动，你能理解他人，人们喜欢和你一起工作。你为行为问题做的准备工作在这里将非常重要。</li>
+</ul>
+<p>以上所有方面都是 PM 需要掌握的重要技能，因此也是面试的重点领域。这些方面的权重将与该领域在实际工作中的重要性大致匹配。</p>
+<h3 id="开发主管和经理"><a class="header" href="#开发主管和经理">开发主管和经理</a></h3>
+<p>开发主管职位和经理职位几乎总是需要候选人具备强大的编码技能。如果你要在工作中进行编码，请确保对代码和算法非常精通，就像开发人员一样。尤其是 Google，在编码方面对管理人员要求很高。</p>
+<p>此外，准备接受以下各方面的技能检查：</p>
+<ul>
+<li>团队合作/领导力：任何担任管理角色的人都必须既能领导他人，又能与他人共同合作。你将在这些方面接收隐式和显式的考察。显示的评估（explicit evaluation）将以询问你如何处理之前工作中的情况的形式出现，比如你与经理意见相左的时候你怎么应对。隐式的评估（implicit evaluation）以面试官观察你如何与他们互动的形式出现。如果你太自负或太被动，面试官可能会觉得你不足以担任管理职位。</li>
+<li>优先级排序：管理人员经常会面临棘手的问题，例如如何确保团队在紧张的截止日期前完成任务。你的面试官会希望你可以适当地确定项目的优先级，从而减少处理次要工作的精力。优先级排序意味着提出正确的问题，以了解什么是关键的，什么是你可以在合理预期内完成的。</li>
+<li>沟通：管理人员需要与他上下级的人员进行沟通，也可能与客户或其他技术水平较低的人员进行沟通。面试官希望看到你可以进行多层次的交流，而且是以一种友好和吸引人的方式进行。在某种程度上，这也是对你个性的一种评估。</li>
+<li>“把事情做好”：也许管理者可以做的最重要的事情就是“把事情做好”。这意味着在为项目做准备和实际执行之间取得适当的平衡。你需要了解如何组织一个项目，如何激励员工，这样你才能完成团队的目标。</li>
+</ul>
+<p>最终，这些方面的大部分都会回到你之前的经历和你的个性上来。一定要使用面试准备表格进行非常非常彻底的准备。</p>
+<h3 id="初创公司"><a class="header" href="#初创公司">初创公司</a></h3>
+<p>不同初创公司的申请和面试过程相差很大。我们不能逐一介绍每一家初创公司，但我们可以提供一些一般性的建议。但是，要明白，特定的初创公司的面试流程可能与此有所不同。</p>
+<h4 id="申请流程"><a class="header" href="#申请流程">申请流程</a></h4>
+<p>许多初创公司可能会发布招聘信息，但对于最热门的初创公司来说，通常最好的方式是通过个人推荐。这个推荐人不一定是你的密友或同事。通常情况下，只要你主动表达你的兴趣，你就能让别人拿起你的简历，看看你是否适合这份工作。</p>
+<h4 id="签证和工作授权"><a class="header" href="#签证和工作授权">签证和工作授权</a></h4>
+<p>不幸的是，美国许多规模较小的初创公司无法提供工作签证。他们和你一样讨厌这个制度，但无论如何你都无法说服他们雇用你。如果你需要签证并且希望在一家初创公司工作，你最好的选择是联系一位与许多初创公司合作的专业招聘人员（他们可能对哪些初创公司会处理签证问题有更好的了解），或者把搜索重点放在更大的初创公司上。</p>
+<h4 id="简历筛选因素"><a class="header" href="#简历筛选因素">简历筛选因素</a></h4>
+<p>初创公司往往希望工程师不仅聪明、会编程，而且还要能在创业环境中出色工作。理想情况下，你的简历应该显示出你的主动性。例如，你从头开始做过哪些项目？</p>
+<p>能够“立即上手（hit the ground running）”也非常重要，他们想要那些已经了解公司语言的人。</p>
+<h4 id="面试过程"><a class="header" href="#面试过程">面试过程</a></h4>
+<p>大公司往往主要关注你在软件开发方面的总体能力，而初创公司则通常会密切关注你的个性、技能和先前的经验。</p>
+<ul>
+<li>性格契合度：性格契合度通常由你与面试官的互动方式来评估。和面试官建立一个友好的、有吸引力的对话是你获得很多工作机会的敲门砖。</li>
+<li>技术栈：因为初创公司需要能够立即上手的人，所以他们很可能会用特定的编程语言来评估你的能力。如果你知道该创业公司使用的语言，一定要温习一下细节。</li>
+<li>经验：初创公司可能会问你很多有关你工作经验的问题。请特别注意“行为问题”这章的内容。</li>
+</ul>
+<p>除上述方面外，你在本书中看到的编码和算法问题在初创公司的面试过程中也非常常见。</p>
+<h3 id="收购acquisitions和收购雇佣acquihires"><a class="header" href="#收购acquisitions和收购雇佣acquihires">收购（Acquisitions）和收购雇佣（Acquihires）</a></h3>
+<p>在对许多收购进行技术尽职调查（due diligence）的过程中，收购方通常会对初创公司的大部分或全部员工进行重新面试。Google、Yahoo、Facebook 和许多其他公司都将此过程作为许多收购的的标准组成部分。</p>
+<h4 id="哪些初创公司会经历这种情况-又为什么呢"><a class="header" href="#哪些初创公司会经历这种情况-又为什么呢">哪些初创公司会经历这种情况？ 又为什么呢？</a></h4>
+<p>进行收购面试，的部分原因是收购方认为他们的员工必须经过这个过程才能被雇佣。他们不希望收购成为这些员工进入公司的“捷径”。而且，由于被收购的方的团队是收购的核心动力，因此他们认为评估团队的技能是很有意义的。</p>
+<p>当然，并非所有的收购都是这样的。著名的数十亿美元收购通常不需要经过这个过程。毕竟，这些收购通常是针对用户群和社区的，而与员工甚至技术无关。这时估团队的技能就不是那么重要了。</p>
+<p>但是，这并不像 “收购雇佣需要面试而传统收购则不需要” 那么简单。雇佣收购（即人才收购）和产品收购之间存在很大的灰色地带。许多初创公司是因其团队和技术背后的想法而被收购的。因而收购完成后，收购方可能会中止原来产品的生产，但要让团队从事非常相似的工作。</p>
+<p>如果你的创业公司正在经历这个过程，通常你需要做好你的团队有非常类似于普通候选人的面试经历的准备（因此，非常类似于你将在本书中看到的）。</p>
+<h4 id="这些面试有多重要"><a class="header" href="#这些面试有多重要">这些面试有多重要？</a></h4>
+<p>这些面试具有极大的重要性。它们在以下三种不同方面扮演着重要的角色：</p>
+<ul>
+<li>它们可以决定收购的成败与否。这往往是一家公司无法被收购的原因。</li>
+<li>它们决定了哪些员工可以收到加入收购方公司的 offer</li>
+<li>它们可以影响收购价格（部分因素是加入的员工数量）。</li>
+</ul>
+<p>这些面试不仅仅是走个形式。</p>
+<h4 id="哪些员工需要接受面试"><a class="header" href="#哪些员工需要接受面试">哪些员工需要接受面试？</a></h4>
+<p>对于科技初创公司来说，通常所有的工程师都要经过面试，因为他们是收购的核心动力之一。</p>
+<p>此外，销售、客户支持、产品经理以及任何其他角色可能都必须经历这个过程。</p>
+<p>通常会将初创公司的 CEO 安排在产品经理或开发经理的职位面试中，因为这通常是与 CEO 当前职责最接近的匹配项。但是，这并不是一个绝对的规则。这取决于 CEO 目前的角色和他感兴趣的是什么。在我的一些客户中，CEO  甚至选择不进行面试，而是在收购完成后离开公司。</p>
+<h4 id="在面试中表现不佳的员工会怎么样"><a class="header" href="#在面试中表现不佳的员工会怎么样">在面试中表现不佳的员工会怎么样？</a></h4>
+<p>表现不佳的员工通常不会收到加入收购方的 offer。（如果许多员工表现不佳，那么收购很可能不会成功。）</p>
+<p>在某些情况下，出于“知识转移（knowledge transfer）”的目的，一些面试表现不佳的员工会获得合同职位。但是这些职位是临时的，预期中员工将在合同终止时离职（通常是 6 个月），尽管有时员工最终会被留下来。</p>
+<p>在其他情况下，糟糕的表现是由于员工被安置在错误的位置上（mis-slotted）造成的。这种问题通常发生在两种情况下：</p>
+<ul>
+<li>
+<p>有时候，一家初创公司会把不是“传统”软件工程师的人贴上软件工程师的标签。这经常发生在数据科学家或数据库工程师身上。这些人可能在软件工程师面试中表现不佳，因为他们的实际角色涉及其他技能。</p>
+</li>
+<li>
+<p>在其他情况下，CEO将一名初级软件工程师向高于其实际水平的高级职位进行“推销”。这就使这名工程师在高级职位的面试中表现不佳，因为他被要求达到不公平的高标准。</p>
+</li>
+</ul>
+<p>在这两种情况下，有时都会对员工进行重新面试以找到更合适的职位。（不过，其他时候，员工就没这么走运了。）</p>
+<p>在极少数情况下，首席执行官能够推翻对一个特别优秀的员工的面试决定，即使他在面试中的表现并没有反映出有什么问题。</p>
+<h4 id="你最佳和最差员工可能会让你大吃一惊"><a class="header" href="#你最佳和最差员工可能会让你大吃一惊">你“最佳”（和最差）员工可能会让你大吃一惊。</a></h4>
+<p>在顶级科技公司进行的问题解决（problem-solving）/算法（algorithm）面试评估的是特定技能，而这些技能可能并不完全符合他们的经理对员工的评估。</p>
+<p>我曾与许多公司合作过，他们对面试中表现最好和最差的员工感到惊讶。在这些面试中，对专业发展还有很多需要学习的初级工程师可能会成为一个很好的问题解决者。</p>
+<p>除非你已经按照他们的面试官的方式对他们进行了评估，否则请不要把任何人排除在外。</p>
+<h4 id="员工是否要面临与典型的候选人相同的标准"><a class="header" href="#员工是否要面临与典型的候选人相同的标准">员工是否要面临与典型的候选人相同的标准？</a></h4>
+<p>本质上是的，尽管有更多的回旋余地。</p>
+<p>大公司倾向于采取规避风险的招聘方式。如果对某人的是否录用持观望态度，他们往往倾向于不雇佣。</p>
+<p>在收购的情况下，“保持观望（on the fence）”的员工可以由于其所在团队其他成员的出色表现而获得通过。</p>
+<h4 id="员工对收购收购雇佣的消息有什么反应"><a class="header" href="#员工对收购收购雇佣的消息有什么反应">员工对收购/收购雇佣的消息有什么反应？</a></h4>
+<p>这是许多初创公司 CEO 和创始人非常关心的问题。员工会对这个过程感到不安吗？或者，如果我们让他们燃起希望，但却没有实现呢？</p>
+<p>我从我的客户那里看到，领导层对此担心的程度超出了必要。</p>
+<p>当然，是有一些员工对这个过程感到不安。出于种种原因，他们可能不会对加入一家大公司感到兴奋。</p>
+<p>不过，大多数员工对这个过程持谨慎乐观的态度。他们希望收购能完成，但他们知道，这些面试的存在意味着它也有可能不会顺利完成。</p>
+<h4 id="收购之后团队会发生什么"><a class="header" href="#收购之后团队会发生什么">收购之后团队会发生什么？</a></h4>
+<p>每种情况都是不同的。但是，我的大多数客户都被作为一个团队被整体保留，或者可能集成到一个现有的团队中。</p>
+<h4 id="你应该如何准备团队的收购面试"><a class="header" href="#你应该如何准备团队的收购面试">你应该如何准备团队的收购面试？</a></h4>
+<p>收购面试的面试准备与收购方的典型面试相当相似。不同之处在于，你的公司是作为一个团队来完成此任务的，而不是根据每个员工的优点来单独挑选他们参加面试。</p>
+<p><em>你们都是一伙的。</em></p>
+<p>与我合作过的一些初创公司搁置了他们的“实际”工作，并让他们的团队在接下来的两到三周时间里准备面试。</p>
+<p>显然，这不是所有公司都能做出的选择，但是，从希望收购得以进行的角度来看，这确实可以大大提高你的业绩。</p>
+<p>你的团队应该单独学习，或两三个人一组，或者进行模拟面试。如果可能，请使用这三种方法。</p>
+<p><em>有些人可能比其他人准备得少。</em></p>
+<p>许多初创公司的开发人员可能只是模糊地听说过算法复杂度（big O time）、二分搜索树、广度优先搜索和其他重要概念。他们将需要一些额外的时间来准备。</p>
+<p>没有计算机科学学位的人（或很久以前获得学位的人）应该首先专注于学习本书中讨论的核心概念，尤其是 big O time（这是最重要的一个）。一个很好的第一步是从头开始实现所有核心数据结构和算法。</p>
+<p>如果收购对你的公司很重要，给这些人足够的时间来准备。他们会需要它。</p>
+<p><em>不要等到最后一分钟。</em></p>
+<p>作为一家初创公司，你可能习惯了在没有大量计划的情况下进行工作。但如果你在收购面试时还是这种态度的话，结果往往不会很好。</p>
+<p>收购面试经常是突然出现的。一家公司的 CEO 正在与一位收购方（或几个收购方）交谈，谈话变得越来越严肃。收购方提到未来某一时刻进行面试的可能性。然后，突然间，出现了一条“本周末到”的消息。</p>
+<p>如果你等到一个确定的面试日期，你可能就只有几天的时间来准备了。你的工程师可能没有足够的时间来学习核心的计算机科学概念并练习面试问题。</p>
+<h3 id="给面试官"><a class="header" href="#给面试官">给面试官</a></h3>
+<p>自编写上一版以来，我了解到许多面试官正在使用 “Cracking the Coding Interview” 来学习如何进行面试。这并不是本书的真正意图，但我不妨为面试提供一些指导。</p>
+<h4 id="实际面试中不要问本书出现的确切问题"><a class="header" href="#实际面试中不要问本书出现的确切问题">实际面试中不要问本书出现的确切问题。</a></h4>
+<p>首先，本书中选择这些问题是因为它们非常适合面试准备。但是一些适合面试准备的问题并不总是适合面试。例如，本书中有一些脑筋急转弯，因为有时面试官会问这类问题。如果候选人在一家喜欢这些问题的公司面试，那么练习这些问题是值得的，尽管我个人认为这些问题很糟糕。</p>
+<p>其次，你的候选人也在读这本书。你应该不想问你的候选人哪些已经解决了的问题吧。</p>
+<p>你可以问类似的问题，但不要只是把问题从这里拿出来。你的目标是测试他们解决问题的能力，而不是他们的记忆能力。</p>
+<h4 id="问中等和困难难度的问题"><a class="header" href="#问中等和困难难度的问题">问中等和困难难度的问题</a></h4>
+<p>这些问题的目的是评估一个人解决问题的能力。当你问一些过于简单的问题时，候选人的表现就不能完全发挥。简单问题会严重影响一个人的表现。这不是一个可靠的指标。</p>
+<h4 id="寻找有多个障碍的问题"><a class="header" href="#寻找有多个障碍的问题">寻找有多个障碍的问题。</a></h4>
+<p>有些问题会有一个“啊哈！”的时刻。它们基于一种特殊的洞察力。如果候选人没有 get 到这个点，那么他们的表现就会很差。如果他们 get 到了这点，那么他们的表现突然就会胜过许多候选人。</p>
+<p>即使这种洞察力是技能的一个指标，它仍然只是一个指标。理想情况下，你需要一个具有一系列障碍、见解或优化的问题。多个考察点胜过一个考察点。</p>
+<p>这里有一个测试：如果你能给一个提示或指导，使一个候选人的表现有很大的不同，那么这可能不是一个很好的面试问题。</p>
+<h4 id="使用困难的问题而不是困难的知识"><a class="header" href="#使用困难的问题而不是困难的知识">使用困难的问题，而不是困难的知识。</a></h4>
+<p>有些面试官，为了把一个问题弄得很难，无意中使用到了困难的知识。果然，很少有候选人表现出色，所以统计数据看起来是正确的，但这并没有准确反映出候选人的技能水平。</p>
+<p>你期望候选人拥有的知识应该是相当简单的数据结构和算法知识。希望计算机科学专业的毕业生了解 big O 和树的基本知识是合理的。大多数人不会记得 Dijkstra 算法，也不会记得 AVL 树是如何工作的。</p>
+<p>如果你的面试问题需要晦涩的知识，问问自己：这真的是一项重要的技能吗？它是否做够重要，以至于我不惜减少雇佣的候选人的数量，或者减少我对候选人解决问题能力或其他技能的关注度？</p>
+<p>你评估的每项新的技能或属性都会减少 offer 的发放数量，除非你通过放宽对另一项技能的要求来平衡这一点。当然，在候选人其他条件都相同的情况下，你可能更喜欢能背诵两英寸厚的算法教科书中详细内容的人。但是实际上候选人的其他条件是不一样的。</p>
+<h4 id="避免出现吓人的问题"><a class="header" href="#避免出现吓人的问题">避免出现“吓人的”问题。</a></h4>
+<p>有些问题会吓到候选人，因为这些问题看起来好像涉及到了一些专业知识，即使它们实际上并没有。这通常包括以下问题：</p>
+<ul>
+<li>数学或概率。</li>
+<li>底层知识（内存分配等）。</li>
+<li>系统设计或可扩展性。</li>
+<li>专有系统（Google 地图等）。</li>
+</ul>
+<p>例如，我有时会问的一个问题是找出 1000 以下的满足 a^3 + b^3 = c^3 + d^3的所有正整数解（第68页）。</p>
+<p>首先，许多候选人会认为他们必须对上面这种或其他比较高级数学做一些花哨的因式分解。其实他们并不需要这么做。他们只需要了解指数、总和与相等这些概念，仅此而已。</p>
+<p>当我问这个问题时，我明确地说，“我知道这听起来像一个数学问题。别担心。它不是。这是一个算法问题。”如果他们开始沿着因式分解的道路走下去，我会阻止他们，并提醒他们这不是一个数学问题。</p>
+<p>其他问题可能涉及一些概率。它可能是候选人肯定知道的东西（例如，从5个选项中选择一个，从1到5中选择一个随机数），但事实上仅仅因为它包含概率就会吓到候选人。</p>
+<p>问一些听起来吓人的问题要小心。记住，面试本身对候选人来说已经是非常紧张了。加上一个“吓人的”问题可能只会让候选人感到更加慌乱，从而导致他表现不佳。</p>
+<p>如果你要问一个听起来“很吓人”的问题，那么你要确保让候选人放心，这个问题并不需要他们下意识以为要使用到的知识。</p>
+<h4 id="给予积极的心理强化"><a class="header" href="#给予积极的心理强化">给予积极的心理强化。</a></h4>
+<p>有些面试官过于关注“正确”的问题，以至于忘了考虑自己的行为。</p>
+<p>许多候选人被面试吓倒了，他们试着去理解面试官的每一个字。他们会抓住每一件听起来可能是积极或消极的事情不放。他们会把“祝你好运”这句话理解为某种意义，即使你对每个人都说了这句话，无论其表现如何。</p>
+<p>你需要让候选人对面试体验、对你以及自己的表现感到满意。你要使他们感到轻松自在。一个紧张的候选人会表现得很差，但这并不意味着他们不好。此外，一个对你或公司有负面感受的优秀的候选人不太可能接受 offer——他们也可能劝阻他们的朋友不要到你这儿面试或接受 offer。</p>
+<p>试着对候选人热情友好。可能有些人很容易做到这一点而有些人不行，但是要尽你最大的努力。</p>
+<p>即使你不是天生热情友好的人，你也可以在整个面试过程中努力说一些积极的话：</p>
+<ul>
+<li>“对，没错。”</li>
+<li>“很好的观点。”</li>
+<li>“做的不错。”</li>
+<li>“是的，这是一个非常有趣的方法。”</li>
+<li>“完美。”</li>
+</ul>
+<p>不管候选人表现得有多差，总有一些事情是他们做对了的。想办法在面试中注入一些积极的因素。</p>
+<h4 id="深入挖掘行为问题"><a class="header" href="#深入挖掘行为问题">深入挖掘行为问题。</a></h4>
+<p>你问他们一个关于工作中遇到的具有挑战性的场景的问题，他们会告诉你他们团队所面临过的困境。那从你的角度看来，这位候选人并没有做太多事情。</p>
+<p>不过不要那么快下结论。候选人可能只是不会专注于自己，因为他们在以往的工作中都是庆祝团队的成就，而不是吹嘘自己。这在担任领导职务的人和女性候选人中尤其常见。</p>
+<p>不要仅仅因为你理解不了一个候选人做了什么，就认为他在某种情况下没有做什么事情。（委婉地）说出情况。具体询问他们是否可以告诉你他们的角色是什么。</p>
+<p>如果这听起来并不是真的解决了困难的问题，那么，再一次，深入探究。让他们更详细地说明他们是如何看待这个问题的，以及他们采取了哪些不同的步骤。问问他们为什么要采取某些行动。不描述自己所采取行动的细节只能说明他们是一个有瑕疵的候选人，但不一定是一个有瑕疵的员工。</p>
+<p>成为一名优秀的面试候选人本身就是一项能力（毕竟，这也是本书存在的原因之一），而且你可能不想对这项能力进行评估。</p>
+<h4 id="指导你的候选人"><a class="header" href="#指导你的候选人">指导你的候选人。</a></h4>
+<p>通读有关候选人如何开发良好算法的章节。这些建议中有很多是你可以提供给那些正在挣扎的候选人的。当你这样做时，你并不是在“教如何面试”，你只是把他们的面试能力与工作能力给分开了。</p>
+<ul>
+<li>很多候选人不会用一个例子来帮助解决面试问题（或者他们不会用一个好的例子）。这大大增加了他们给出答案的难度，但这并不一定意味着他们不是很好的问题解决者。如果候选人自己没有写一个例子，或者他们无意中写了一个特殊的用例，请指导他们。</li>
+<li>有些候选人需要很长时间才能找到 bug，因为他们使用了一个非常大的用例。这并不会使他们成为一个糟糕的测试人员或开发人员。这只是意味着他们没有意识到，先从概念上分析他们的代码会更有效，或者一个小的例子几乎可以工作得一样好。引导他们。</li>
+<li>如果他们在找到最优解之前就开始深入研究代码，那么把他们拉回来，把注意力集中在算法上（如果这是你想看到的）。如果是因为候选人真的没有时间，就说他从未找到或实现过最优解决方案，那绝对是不公平的。</li>
+<li>如果他们感到紧张不安，不知道下一步该怎么做时，可以建议他们先使用通过蛮力（brute force）解决的方案，再寻找可以优化的方面。</li>
+<li>如果他们什么都没说，而且这道题有一种相当明显的蛮力解决方法时，提醒他们先从蛮力开始是没关系的。他们的第一个解决方案不一定必须是完美的。</li>
+</ul>
+<p>即使你认为候选人在这些方面的能力是一个重要因素，但这并不是唯一的因素。你完全可以将某人标记为“未通过”此障碍，但同时要帮助并引导他们越过这一障碍。</p>
+<p>虽然这本书的目的是指导候选人通过面试，但作为面试官，你的目标之一就是消除候选人没有准备对面试表现的影响。毕竟，有些候选人已经为面试做过准备，而有些则没有，但这可能并不能充分说明他们作为工程师的能力。</p>
+<p>使用本书中的建议指导候选人（当然，要在合理的范围内——毕竟你不希望因为过多地指导候选人，以至于无法评估他们解决问题的能力）。</p>
+<p>不过在这里要小心。如果你本身就使候选人生畏，那这种指导可能会让事情变得更糟。当你告诉候选人，他们在不断地创建错误的例子，没有优先考虑正确的测试方法，等等，这往往会把事情搞砸。</p>
+<h4 id="如果他们想要安静就给他们安静"><a class="header" href="#如果他们想要安静就给他们安静">如果他们想要安静，就给他们安静。</a></h4>
+<p>候选人最常问我的一个问题是，当他们只需要安静地思考一会儿的时候，面试官却执意要开口说话，他们该如何应对这种情况。</p>
+<p>如果你的候选人需要安静，那就给他时间思考。学会区分候选人的 “我被困住了，不知道该做什么” 和 “我在默默地思考” 这两种状态。</p>
+<p>这可能会帮你来决定是否要指导你的候选人，因为你的指导可能会帮助到很多候选人，但这不一定会帮助到所有的候选人。因为有些人反而需要一点时间来自己思考。给他们时间，这样当你评估他们的时候，就要考虑到他们得到的指导比其他人少。</p>
+<p>####了解你的模式：常规检查、质量、专家级和指代型。</p>
+<p>在非常非常高的层次上，有四种问题模式：</p>
+<ul>
+<li><strong>常规检查</strong>：这些通常是简单的问题解决型（problem-solving）问题或设计问题。它们被用来评估候选人解决问题的最低能力。不能通过这些问题来区分候选人的能力是 “okay” 还是 “great”。你可以在面试流程早期使用这类问题（过滤掉最差的候选人），或者当你只是需要最低程度能力的候选人时也可以使用。</li>
+<li><strong>质量检查</strong>：这些都是更具挑战性的问题，通常在问题解决或设计中。这类问题被设计得比较严谨，真正需要候选人去思考。当算法/解决问题的技能非常重要时，使用这些技巧。在这种情况下，面试官犯的最大的错误是问一些实际上不是很好的问题解决型问题。</li>
+<li><strong>专家级问题</strong>：这些问题用于测试特定主题的知识，例如 Java 或机器学习。一项技能，只有当一个优秀的工程师在工作中不能快速学会时，才应该使用专业问题对其进行考察。这些问题必须确实是专家级别的问题。不幸的是，我曾经遇到过这样的情况，一家公司询问刚刚完成了为期 10 周的编程训练营的候选人有关 Java 的详细问题。这又能说明什么呢？如果她有这方面的知识，那么这也只是她最近才学到、并且轻松掌握的知识。如果这项技能很容易学会，那么就没有理由以此来决定候选人是否被雇佣。</li>
+<li><strong>指代型知识</strong>：这是一种不太专业的知识（事实上，你甚至可能不需要它），但是你希望与他们级别相同的候选人知道。例如，如果候选人知道CSS或HTML，这对你来说可能不是很重要。但是，如果候选人深入研究了这些技术，却不能谈论为什么表格好或不好，这就说明了一个问题。他们没有在工作中吸收核心信息。</li>
+<li><strong>代理知识</strong>：这不是专家级别的知识（实际上，你甚至可能不需要它），但是你希望这种级别的候选人能够了解这些。例如，如果候选人知道 CSS 或 HTML，这对你来说可能不是很重要。但是，如果候选人已经深入研究了这些技术，却不能谈论为什么 table 好或不好，这就说明了一个问题。他们没有在工作中吸收核心信息。</li>
+</ul>
+<p>当一家公司面试时将这些因素混乱搭配时，就会遇到麻烦：</p>
+<ul>
+<li>他们向不是专家的人询问专家问题。</li>
+<li>当他们不需要专家时，他们却雇佣了专家。</li>
+<li>他们需要专家，但面试却只是评估了基本技能。</li>
+<li>他们在询问常规检查（简单）问题，却认为自己问的是质量检查问题。因此，他们对候选人的表现给出了 “okay” 或 “great” 的评价，事实上这会使候选人微小的差别被错误地放大。</li>
+</ul>
+<p>实际上，在与许多大大小小的科技公司合作进行招聘时，我发现大多数公司都至少做错了其中的一件事。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="II.Behind_the_Scenes.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="IV.Before_the_Interview.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="II.Behind_the_Scenes.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="IV.Before_the_Interview.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

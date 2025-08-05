@@ -1,0 +1,257 @@
+<!DOCTYPE HTML>
+<html lang="cn" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>引言 - CtCI-6th-Edition-CN</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">CtCI-6th-Edition-CN</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/magicwenli/CtCI-6th-Edition-CN/tree/master" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/magicwenli/CtCI-6th-Edition-CN/edit/master/.//Introduction.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="引言"><a class="header" href="#引言">引言</a></h2>
+<h4 id="哪里错了"><a class="header" href="#哪里错了">哪里错了</a></h4>
+<p>我们再次沮丧地走出招聘会。那天考察的 10 位候选人中，没有一位会收到 offer。我们在想，我们是不是太苛刻了？</p>
+<p>我尤其感到失望。我们拒绝了我的一位候选人。他是我之前教过的一个学生。他在世界上最好的计算机科学学校之一华盛顿大学取得了 3.73 的 GPA，并在开源项目上做了大量工作。他精力充沛。他很有创造性。他很敏锐。他工作努力。他在所有方面都是一个真正的极客。</p>
+<p>但我不得不同意委员会其他成员的观点：这些数据并不能说明问题。即使我强烈的推荐能够说服他们重新考虑，他也肯定会在后面的招聘流程中遭到淘汰。因为他暴露了太多的危险信号（red flag）。</p>
+<p>虽然他很聪明，但是在解决面试问题时他却表现得很艰难。面试中的第一个问题是一个经典问题的变形，大多数成功的求职者都能快速做出回答，但是他却在这个问题的算法开发时遇到了麻烦。当他提出一个方案时，没有考虑到针对其他场景优化的解决方案。最终在编码时，他用最初的解决思路快速地写完了代码，但是代码中却充满了他没有留意到的错误。尽管从任何角度来看，他都不是我们所见过的最差的候选人，但是他离 “bar” （译者注，标杆）还差得很远。所以，拒绝。</p>
+<p>几周后，当他在电话中询问反馈时，我很纠结不知道该怎么回答他。更聪明？不，我知道他很聪明。成为更好的 coder？不，他的技术和我见过的一些最好的不相上下。</p>
+<p>像许多积极的求职者一样，他准备得很充分。他读过 K&amp;R 的经典 C 语言书籍，也复习过 CLRS 著名的算法教科书。他可以详细描述平衡树的无数种方法，而且他可以用 C 语言做一些没有任何理智的程序员会考虑做的事情。</p>
+<p>我不得不告诉他一个不幸的事实：仅仅看那些书是不够的。学术书籍能让你为新奇的研究做好准备，它们可能会让你成为一名更好的软件工程师，但它们不足以应对面试。为什么？我给你个提示：你的面试官没有见过红黑树，因为他们在学校也是如此。</p>
+<p>要破解编码面试，你需要准备真实的面试问题。你必须对实际问题进行练习，并学习它们的模式。最终能实现灵活开发新的算法，而不是死记硬背现有的问题。</p>
+<p><strong>Cracking the Coding Interview</strong> 一书是我根据在一线公司参与面试并在之后指导求职者通过面试的第一手经验所总结的成果。它是与求职者数百次对话的成果。它是汇总候选人和面试官提出的数千个问题的成果。它也是参考了这么多公司的这么多面试问题的成果。本书收录了 189 个最好的面试问题，这是从成千上万个可能的问题中挑选出来的。</p>
+<h4 id="我的方法"><a class="header" href="#我的方法">我的方法</a></h4>
+<p><strong>Cracking the Coding Interview</strong> 的重点是算法、编码和设计问题。为什么？因为虽然你可以也会被问到工作经验方面的问题（behavioral question），但答案会和你的简历一样五花八门。同样，虽然许多公司会问一些所谓的 “trivia” 问题（例如，“什么是虚拟功能？”），但是通过实践这些问题而获得的技能仅限于非常具体的知识。本书将简要介绍其中的一些问题，向你展示它们是什么样的，但我选择将空间分配给需要学习更多内容的领域。</p>
+<h4 id="我的爱好"><a class="header" href="#我的爱好">我的爱好</a></h4>
+<p>教学是我的爱好。我喜欢帮助人们理解新概念，并为他们提供工具来帮助他们在他们爱好的领域中脱颖而出。</p>
+<p>我第一次正式的教学经历是宾夕法尼亚大学，当时我在第二年成为一名计算机科学本科课程的助教。我接受了 TA 的其他几门课程，最后我在那里开设了自己的计算机科学课程，侧重于实践技能。</p>
+<p>作为 Google 的工程师，培训和指导新工程师是我最喜欢的事情之一。我甚至利用我的 “20％ 时间” 在华盛顿大学教授两门计算机科学课程。</p>
+<p>多年后的今天，我继续教授计算机科学的概念，但这一次的目标是让初创公司的工程师为他们的 acquisition interview 做准备。我已经看到他们的错误和努力，并且为帮助他们解决这些问题制定了技术和策略。</p>
+<p><strong>Cracking the Coding Interview</strong>、<strong>Cracking the PM Interview</strong>、<strong>Cracking the Tech Career</strong> 和 <strong>CareerCup</strong>，都体现了我对教学的热爱。即使是现在，你也经常可以在 <em>CareerCup.com</em> 上看到我在 “闲逛”，以帮助那些寻求帮助的用户。</p>
+<p>加入我们。</p>
+<p>Gayle L. McDowell</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="Foreword.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="I.The_Interview_Process.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="Foreword.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="I.The_Interview_Process.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

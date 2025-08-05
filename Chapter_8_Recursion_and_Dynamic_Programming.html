@@ -1,0 +1,428 @@
+<!DOCTYPE HTML>
+<html lang="cn" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Chapter 8 I 递归和动态规划 - CtCI-6th-Edition-CN</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">CtCI-6th-Edition-CN</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/magicwenli/CtCI-6th-Edition-CN/tree/master" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/magicwenli/CtCI-6th-Edition-CN/edit/master/.//Chapter_8_Recursion_and_Dynamic_Programming.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="chapter-8--递归和动态规划"><a class="header" href="#chapter-8--递归和动态规划">Chapter 8 | 递归和动态规划</a></h1>
+<p>虽然存在大量的递归问题，但其中许多都遵循着类似的模式。判断一个问题是否是考察递归的，一个很好的暗示是这个问题可以由子问题构建而成。</p>
+<p>当你听到以下列语句开头的问题时，它通常是（但并非总是）一个潜在的递归的问题：“设计一个算法来计算第 n 个......”，“编写代码以列出前 n 个……”， “实现一个方法来计算所有的……”，等等。</p>
+<blockquote>
+<p>提示：根据我指导求职者的经验，人们在“这听起来像一个递归问题”这一直觉上通常有 50% 的准确率。利用这种直觉，因为 50% 也是很有价值的。但是不要害怕用不同的方式来看待问题，即使你最初认为它看起来是递归的。因为还有 50% 的可能性你是错的。</p>
+</blockquote>
+<p>熟能生巧！你做的题越多，就越容易识别递归问题。</p>
+<h3 id="如何处理"><a class="header" href="#如何处理">如何处理</a></h3>
+<p>根据定义，递归解决方案是基于子问题的解决方案构建的。很多时候，这意味着只需通过添加内容，删除内容或以其他方式更改f（n-1）的解来计算f（n）。在其他情况下，你可以解决数据集的前半部分，然后是后半部分的问题，然后合并这些结果。</p>
+<p>你可以通过多种方式将问题划分为子问题。开发算法的三种最常用的方法是自下而上（bottom-up），自上而下（top-down）和一半一半（half-and-half）。</p>
+<h4 id="自下而上的方法"><a class="header" href="#自下而上的方法">自下而上的方法</a></h4>
+<p>自下而上的方法通常是最直观的。我们首先明确如何解决一个简单情况下的问题，比如只有一个元素的列表。然后我们弄清楚如何解决两个元素的问题，然后是三个元素，以此类推。这里的关键是考虑如何根据前一个案例（或多个以前的案例）为当前的案例构建解决方案。</p>
+<h4 id="自上而下的方法"><a class="header" href="#自上而下的方法">自上而下的方法</a></h4>
+<p>自上而下的方法可能更复杂，因为它不那么具体。但有时候，这是思考问题的最佳方式。</p>
+<p>在这些问题中，我们考虑如何将案例 N 的问题划分为子问题。</p>
+<p>小心案例之间的重叠。</p>
+<h4 id="一半一半的方法"><a class="header" href="#一半一半的方法">一半一半的方法</a></h4>
+<p>除了自上而下和自下而上的方法之外，将数据集分成两半通常也是有效的。</p>
+<p>例如，二分搜索使用一种“一半一半（half-and-half）”方法。我们在有序数组中查找元素时，首先要确定数组的哪一半包含该值。然后我们在有值那一半进行递归搜索。</p>
+<p>归并排序也是一种“一半一半（half-and-half）”的方法。我们对数组的每一半进行排序，然后将排序后的一半合并在一起。</p>
+<h3 id="递归-vs-迭代"><a class="header" href="#递归-vs-迭代">递归 vs 迭代</a></h3>
+<p>递归算法的空间效率非常低。每次递归调用都会向堆栈添加一个新层，这意味着如果你的算法递归到 n 的深度，那么它至少会使用 O(n) 内存。</p>
+<p>因此，迭代地实现递归算法通常更好。所有递归算法都可以迭代地实现，尽管有时候实现这样的代码要复杂得多。在深入研究递归代码之前，先问问自己迭代地实现它有多难，并与面试官讨论权衡。</p>
+<h3 id="动态规划-vs-记忆法memorizotion"><a class="header" href="#动态规划-vs-记忆法memorizotion">动态规划 vs 记忆法（Memorizotion）</a></h3>
+<p>尽管人们对动态规划（Dynamic programming）问题的可怕程度大做文章，但实际上没有必要害怕它们。事实上，一旦你理解了，这些其实可能是非常容易的问题。</p>
+<p>动态规划主要是采用递归算法并找到重叠的子问题（即重复调用）。然后缓存这些结果，以便将来进行递归调用。</p>
+<p>或者，你可以研究递归调用的模式并实现迭代。你仍然要“缓存（cache）”之前的工作。</p>
+<blockquote>
+<p>术语说明：有些人把自上而下的动态规划称为“记忆法（memoization）”，只使用“动态规划”来指代自下而上的工作。我们在这里没有做出这样的区分。统称为动态规划。</p>
+</blockquote>
+<p>动态规划的一个最简单的例子是计算第 n 个斐波那契数。处理这类问题的一个好方法将其作为正常的递归解决方案实现，然后添加缓存部分。</p>
+<h4 id="斐波那契数列fibonacci-numbers"><a class="header" href="#斐波那契数列fibonacci-numbers">斐波那契数列（Fibonacci Numbers）</a></h4>
+<p>让我们来看一下计算第 n 个斐波那契数的方法。</p>
+<p><em>递归</em></p>
+<p>我们将从递归实现开始。听起来很简单，对吧？</p>
+<pre><code class="language-java">1 	int fibonacci(int i) {
+2 		if (i == 0) return 0;
+3 		if (i == 1) return 1;
+4 		return fibonacci(i - 1) + fibonacci(i - 2);
+5 	}
+</code></pre>
+<p>这个函数的运行时间是多少？在回答之前想一下。</p>
+<p>如果你说是 O(n) 或者 O(n^2)（很多人会这么说），请再想一想。研究代码所采用的代码路径。将代码路径画成树（即递归树）对本问题和许多递归问题都很有用。</p>
+<div align=center><img src="img/ch8_1.png"/></div>
+观察树上的叶子节点都是 fib(1) 和 fib(0)，它们表示基本案例。
+<p>树中的节点总数将表示运行时，因为每个调用在其递归调用之外只执行 O(1) 个工作。因此，调用的数量是运行时。</p>
+<blockquote>
+<p>提示：对于以后的问题，请记住这一点。将递归调用绘制为树是计算递归算法运行时的一种很好的方法。</p>
+</blockquote>
+<p>树中有多少节点？在我们开始处理基本案例（叶子）之前，可以看到除叶子外每个节点都有两个子节点。即每个节点分叉两次。</p>
+<p>根节点有两个子节点。这些子节点中每个又分别都有两个子节点（所以“孙节点（grandchildren）”层总节点数为 4 个）。这些孙节点中每个又分别都有两个子节点，以此类推。如果我们这样做n次，我们会得到大约 O(2^n) 个节点。这样运行时大概为 O(2^n)。</p>
+<blockquote>
+<p>实际上，它略好于 O(2^n)。如果你看一下子树，你可能会注意到（除了叶子节点和它上面的那些节点）任何节点的右子树总是小于左子树。如果左右子树的大小相同，其运行时将为 O(2^n)。但由于左右子树的大小不同，真正的运行时间更接近于 O(1.6^n)。虽然说 O(2^n) 在技术上仍然正确，但它描述的其实是运行时的上限（参见“Big O, Big Theta,and Big Omega“，第39页）。不管怎样，我们仍然有一个指数级的运行时。</p>
+</blockquote>
+<p>事实上，如果我们在计算机上实现这个，我们会看到秒数呈指数增长。</p>
+<div align=center><img src="img/ch8_2.png"/></div>
+我们应该寻找一种方法来优化它。
+<p><em>自上而下动态规划（或记忆法）</em></p>
+<p>重新回到递归树。在哪里可以看到相同的节点?</p>
+<p>可以发现有很多相同的节点。例如，fib(3) 出现两次，fib(2) 出现了三次。那为什么我们每次还要从头开始重新计算这些呢？</p>
+<p>事实上，当我们调用 fib(n) 时，我们不应该做比 O(n) 更多的调用，因为只有 O(n) 个可能的值可以赋给 fib。每次计算 fib(i) 时，我们都应该缓存计算的结果并在以后直接使用这个结果。</p>
+<p>这就是记忆法。</p>
+<p>只需稍加修改，我们就可以将这个函数调整为在 O(n) 的时间内运行。我们只是在两次调用之间缓存fibonacci(i) 的结果。</p>
+<pre><code class="language-java">1 	int fibonacci(int n) {
+2 		return fibonacci(n, new int[n + 1]);
+3 	}
+4
+5 	int fibonacci(int i, int[] memo) {
+6 		if (i == 0 || i == 1) return i;
+7
+8 		if (memo[i] == 0) {
+9 			memo[i] = fibonacci(i - 1, memo) + fibonacci(i - 2, memo);
+10 		}
+11 		return memo[i];
+12 	}
+</code></pre>
+<p>在一台典型的计算机上，第一个递归函数生成第 50 个斐波那契数可能需要超过一分钟的时间，而动态规划方法可以在几分之一毫秒内生成第 10000 个斐波那契数。(当然，使用这种精确的代码（exact code），int 值在很早就会溢出。)</p>
+<p>现在，如果我们绘制递归树，它看起来像这样（黑框代表立即返回的缓存调用）：</p>
+<div align=center><img src="img/ch8_3.png"/></div>
+现在这棵树中有多少个节点？ 我们可能会注意到树现在直接向下延伸，深度大约为 n。这些节点中的每个节点都有一个其他的子节点，导致树中大约有 2n 个子节点。这需要 O(n) 的运行时间。
+<p>通常，将递归树描绘成如下所示是有用的：</p>
+<div align=center><img src="img/ch8_4.png"/></div>
+实际上递归不是这样发生的。但是，通过横向扩展节点而不是纵向扩展节点，你可以得到一棵在变深之前会变宽的树。（这就像是广度优先而不是深度优先。）有时这使得计算树中的节点数变得更容易。你真正要做的是更改要展开的节点和返回缓存值的节点。如果你坚持要计算动态编程问题的运行时，可以尝试这种方法。
+<p><em>自下而上的动态规划</em></p>
+<p>我们也可以采用这种方法，并用自下而上的动态规划实现它。考虑做与递归记忆法相同的事情，但是要反过来。</p>
+<p>首先，我们计算 fib(1) 和 fib(0)，这些已经从基本案例中得知。然后我们用这些来计算 fib(2)，再然后我们使用之前的答案来计算 fib(3)，然后是fib(4)，以此类推。</p>
+<pre><code class="language-java">1 	int fibonacci(int n) {
+2 		if (n == 0) return 0;
+3 		else if (n == 1) return 1;
+4
+5 		int[] memo new int[n];
+6 		memo[0] = 0;
+7 		memo[l] = 1;
+8 		for (int i= 2; i &lt; n; i++) {
+9 			memo[i] = memo[i - 1] + memo[i - 2];
+10		}
+11 		return memo[n - 1] + memo[n - 2];
+12 	}
+</code></pre>
+<p>如果你真的理解了这是如何工作的，你会发现只有在计算 memo[i+1] 和 memo[i+2] 时才需要用到 memo[i]。之后就不需要了。因此，我们可以去掉 memo 表，只存储一些变量。</p>
+<pre><code class="language-java">1 	int fibonacci(int n) {
+2 		if (n == 0) return 0;
+3 		int a = 0;
+4 		int b = 1;
+5 		for (int i = 2; i &lt; n; i++) {
+6 			int c = a + b;
+7 			a = b;
+8 			b = c;
+9 		}
+10 		return a + b;
+11 	}
+</code></pre>
+<p>这基本上是将最后两个 Fibonacci 值的结果存储到 a 和 b 中。在每次迭代中，我们计算下一个值 (c = a + b)，然后将 (b, c = a + b) 移动到 (a, b) 中。</p>
+<p>对于这样一个简单的问题，这种解释似乎有些过度了，但真正理解这个过程将使更困难的问题变得容易得多。阅读本章中的问题（其中许多使用动态规划）将有助于巩固你的理解。</p>
+<p><strong>附加阅读</strong>： Proof by Induction (pg 631).</p>
+<hr />
+<h3 id="interview-questions"><a class="header" href="#interview-questions">Interview Questions</a></h3>
+<hr />
+<ul>
+<li>
+<p><strong>8.1 三级台阶（Triple Step）</strong>：一个孩子跑上有 n 级台阶的楼梯，一次可以跳 1 级、2 级或 3 级。实现一个方法来，计算该孩子可以有多少种可能的方式跑上楼梯。</p>
+<p><em>提示：#152, #178, #217, #237, #262, #359</em></p>
+</li>
+<li>
+<p><strong>8.2 网格中的机器人（Robot in a Grid）</strong>：想象一个机器人坐在网格的左上角，其中该网格有 r 行和 c 列。该机器人只能在向右和向下两个方向移动，但是某些单元格是“禁区”，因此机器人不能踩到它们。设计一种算法，从左上角到右下角为机器人找到一条路径。</p>
+<p><em>提示：#331, #360, #388</em></p>
+</li>
+<li>
+<p><strong>8.3 魔法索引（Magic Index）</strong>：数组 A[0 ... n-1] 中的魔法索引被定义为这样一个索引，使得 A[i] = i。给定一个由不同整数组成的有序数组，编写一个方法以找到数组 A 中的魔术索引（如果存在）。</p>
+<p>FOLLOW UP</p>
+<p>如果值不唯一怎么办？</p>
+<p><em>提示：#770, #204, #240, #286, #340</em></p>
+</li>
+<li>
+<p><strong>8.4 幂集（Power Set）</strong>：编写一种方法以返回集合的所有子集。</p>
+<p><em>提示：#273, #290, #338, #354, #373</em></p>
+</li>
+<li>
+<p><strong>8.5 递归相乘（Recursive Multiply）</strong>：编写一个递归函数，使两个正整数相乘，不使用 * 运算符。你可以使用加法、减法和移位，但应尽量减少这些操作的数量。</p>
+<p><em>提示：#166, #203, #227, #234, #246, #280</em></p>
+</li>
+<li>
+<p><strong>8.6 汉诺塔（Towers of Hanoi）</strong>：在经典的汉诺塔问题中，你有 3 个塔和 N 个不同大小的圆盘，它们可以滑到任何塔上。困难在于圆盘从上到下必须按大小的升序进行排序（即，每个圆盘都位于更大的圆盘之上）。你有以下限制：</p>
+<p>（1）一次只能移动一个圆盘。</p>
+<p>（2）将圆盘从从一个塔顶滑到另一个塔顶。</p>
+<p>（3）一个圆盘不能放在比它小的圆盘上。</p>
+<p>编写一个程序，使用堆栈将圆盘从第一个塔移动到最后一个塔。</p>
+<p><em>提示：#744, #224, #250, #272, #318</em></p>
+</li>
+<li>
+<p><strong>8.7 无重复字符的排列（Permutations without Dups）</strong>：编写一个方法来计算一串无重复字符的所有排列。</p>
+<p><em>提示：#150, #185, #200, #267, #278, #309, #335, #356</em></p>
+</li>
+<li>
+<p><strong>8.8 有重复字符的排列（Permutations with Dups）</strong>：编写一个方法来计算字符串的所有排列，其字符不一定是唯一的。排列列表不应重复。</p>
+<p><em>提示：#761, #790, #222, #255</em></p>
+</li>
+<li>
+<p><strong>8.9 括号（Parens）</strong>：实现一个算法，以打印 n 对括号的所有有效（例如正确打开和关闭）组合。</p>
+<p>EXAMPLE</p>
+<pre><code>Input: 3
+Output: ((())), (()()), (())(), ()(()), ()()()
+</code></pre>
+<p><em>提示：#138, #174, #787, #209, #243, #265, #295</em></p>
+</li>
+<li>
+<p><strong>8.10 绘画填充（Paint Fill）</strong>：实现许多图像编辑程序可能会看到的“绘画填充”功能。即，给定一个屏幕（由一个二维颜色数组表示）、一个点和一种新颜色，填充周围区域，直到颜色从原来的颜色改变。</p>
+<p><em>提示：#364, #382</em></p>
+</li>
+<li>
+<p><strong>8.11 硬币（Coins）</strong>：假设有无数个 25 美分、10 美分、5 美分和 1 美分的硬币，编写代码核算有多少种 n 美分的表示方法。</p>
+<p><em>提示：#300, #324, #343, #380, #394</em></p>
+</li>
+<li>
+<p><strong>8.12 八皇后（Eight Queens）</strong>：编写一个算法，在 8x8 的国际象棋棋盘上，打印 8 个皇后的所有排列方式，以使它们都不共享相同的行、列或对角线。在这种情况下，“对角线”是指所有的对角线，而不仅仅是平分棋盘的两条。</p>
+<p><em>提示：#308, #350, #371</em></p>
+</li>
+<li>
+<p><strong>8.13 （Stack of Boxes）</strong>：你有总数为 n 的一堆盒子，宽度w&lt;i&gt;，高度h&lt;i&gt;，深度d&lt;i&gt;。盒子不能旋转，只有当堆中的每个盒子的宽度，高度和深度均严格大于其上方的盒子，才可以堆叠在一起。实现一种方法来计算可能的最高堆栈的高度。堆栈的高度是每个盒子的高度之和。</p>
+<p><em>提示：#755, #194, #274, #260, #322, #368, #378</em></p>
+</li>
+<li>
+<p><strong>8.14 布尔求值（Boolean Evaluation）</strong>：给定一个由 0 (false)、1 (true)、&amp; (AND)、| (OR) 和 ^ (XOR) 组成的布尔表达式，以及一个期望的布尔结果值 <code>result</code>。可以向表达式中插入括号以使其得出期望的 <code>result</code> ，实现一个函数，来计算可采取的操作方法的数量。</p>
+<p>EXAMPLE</p>
+<pre><code>countEval ("1^0|0|1", false) -&gt; 2
+countEval ("0&amp;0&amp;0&amp;1^1|0", true) -&gt; 10
+</code></pre>
+<p><em>提示：#748, #168, #197, #305, #327</em></p>
+</li>
+</ul>
+<p><strong>附加问题</strong>：链表(#2.2, #2.5, #2.6)，栈和队列(#3.3)，树和图(#4.2, #4.3, #4.4, #4.5, #4.8, #4.10, #4.11, #4.12)，数学和逻辑难题(#6.6)，排序和搜索(#10.5, #10.9, #10.10)，C++(#12.8)，中等问题(#16.11)，困难问题(#17.4, #17.6, #17.8, #17.12, #17.13, #17.15, #17.16, #17.24, #17.25)。</p>
+<p>提示从第 662 页开始。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="Chapter_7_Object-Oriented_Design.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="Chapter_9_System_Design_and_Scalability.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="Chapter_7_Object-Oriented_Design.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="Chapter_9_System_Design_and_Scalability.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

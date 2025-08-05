@@ -1,0 +1,19 @@
+[book]
+authors = ["F8F-1BearCat"]
+language = "cn"
+multilingual = false
+src = "./"
+title = "CtCI-6th-Edition-CN"
+
+[output.html]
+git-repository-url = "https://github.com/magicwenli/CtCI-6th-Edition-CN/tree/master"
+edit-url-template = "https://github.com/magicwenli/CtCI-6th-Edition-CN/edit/master/{path}"
+
+[output.html.search]
+limit-results = 20
+use-boolean-and = true
+boost-title = 2
+boost-hierarchy = 2
+boost-paragraph = 1
+expand = true
+heading-split-level = 2

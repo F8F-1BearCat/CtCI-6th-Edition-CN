@@ -1,0 +1,446 @@
+<!DOCTYPE HTML>
+<html lang="cn" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Chapter 6 I 数学和逻辑难题 - CtCI-6th-Edition-CN</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">CtCI-6th-Edition-CN</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/magicwenli/CtCI-6th-Edition-CN/tree/master" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/magicwenli/CtCI-6th-Edition-CN/edit/master/.//Chapter_6_Math_and_Logic_Puzzles.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="chapter-6--数学和逻辑难题"><a class="header" href="#chapter-6--数学和逻辑难题">Chapter 6 | 数学和逻辑难题</a></h1>
+<p>所谓的“智力题”（或脑筋急转弯）是最受争议的问题，许多公司都有禁止使用它们的政策。不幸的是，即使禁止了这些问题，你仍然可能会被问到其中之一。为什么？ 因为没有人可以就脑筋急转弯的定义达成共识。</p>
+<p>好消息是，如果你被问到一个智力题或脑筋急转弯，它可能是一个相当公平的问题。它可能不会依赖于措辞技巧，而且几乎总是可以从逻辑上推导出来。许多人拥有数学或计算机科学的基础，而且几乎所有人的解决方案都可以从逻辑上推导出来。</p>
+<p>我们将通过一些常见的方法以及一些基本的知识，来解决这些问题。</p>
+<h3 id="质数"><a class="header" href="#质数">质数</a></h3>
+<p>你可能知道，每个正整数都可以分解成质数的乘积。例如：</p>
+<div align=center><img src="img/ch6_1.png"/></div>
+注意，许多质数的指数都是 0。
+<h4 id="可除性"><a class="header" href="#可除性">可除性</a></h4>
+<p>上面提到的质数定律意味着，为了使数字 x 能整除数字 y（写成 x\y，或mod(y, x) = 0），x 的质因数分解中的所有质数都必须在 y 的质因数分解中。或者，更具体地说：</p>
+<div align=center><img src="img/ch6_2.png"/></div>
+实际上，x 和 y 的最大公约数是：
+<div align=center><img src="img/ch6_3.png"/></div>
+x 和 y 的最小公倍数为：
+<div align=center><img src="img/ch6_4.png"/></div>
+作为一个有趣的练习，停下来想一下如果使 gcd * lcm，会发生什么：
+<div align=center><img src="img/ch6_5.png"/></div>
+<div align=center><img src="img/ch6_6.png"/></div>
+#### 检查质数
+<p>这个问题很常见，我们觉得有必要专门讨论一下。简单的方法是从 2 到 n-1 进行迭代，在每次迭代中检查可除性。</p>
+<pre><code class="language-java">1 	boolean primeNaive(int n) {
+2 		if (n &lt; 2) {
+3 			return false;
+4 		}
+5 		for (int i = 2; i &lt; n; i++) {
+6 			if (n % i == 0) {
+7 				return false;
+8 			}
+9 		}
+10 		return true;
+11 	}
+</code></pre>
+<p>一个小但重要的改进是只迭代到根号 n。</p>
+<pre><code class="language-java">1 	boolean primeSlightlyBetter(int n) {
+2 		if (n &lt; 2) {
+3 			return false;
+4 		}
+5 		int sqrt = (int) Math.sqrt(n);
+6 		for (int i = 2; i&lt;= sqrt; i++) {
+7 			if (n % i == 0) return false; 
+8 		}
+9 		return true;
+10 	}
+</code></pre>
+<p>用根号 n 就足够了，因为对于每一个能整除 n 的数 a，都有一个补数 b，其中 a * b = n。如果 a &gt; 根号 n ，那么 b &lt; 根号 n  （因为 (根号 n )^2 = n ）。因此我们不需要 a 来检验 n 的质数，因为我们已经用 b 检验过了。</p>
+<p>当然，实际上，我们真正需要做的就是检查 n 是否可以被质数整除。这就是埃拉托色尼筛（the Sieve of Eratosthenes）的作用。</p>
+<h4 id="生成质数列表埃拉托色尼筛the-sieve-of-eratosthenes"><a class="header" href="#生成质数列表埃拉托色尼筛the-sieve-of-eratosthenes">生成质数列表：埃拉托色尼筛（The Sieve of Eratosthenes）</a></h4>
+<p>Eratosthenes 筛法是生成质数列表的一种高效方法。它的原理是认识到所有非质数都能被一个质数整除。</p>
+<p>我们首先列出所有数字，直到某个最大值为止。首先，我们划掉所有能被 2 整除的数。然后，我们寻找下一个质数（下一个未划去的数），并划去所有能被它整除的数。通过划去所有能被 2、3、5、7、11 等整除的数，我们得到了一个从 2 到最大值的质数列表。</p>
+<p>下面的代码实现了 Eratosthenes 筛。</p>
+<pre><code class="language-java">1 	boolean[] sieveOfEratosthenes(int max) {
+2 		boolean[] flags = new boolean[max + 1];
+3 		int count = 0;
+4
+5 		init(flags); // Set all flags to true other than 0 and 1
+6 		int prime = 2;
+7 
+8 		while (prime &lt;= Math.sqrt(max)) {
+9 			/* Cross off remaining multiples of prime */
+10 			crossOff(flags, prime);
+11
+12 			/* Find next value which is true */
+13 			prime = getNextPrime(flags, prime);
+14 		}
+15 
+16 		return flags;
+17 	}
+18
+19 	void crossOff(boolean[] flags, int prime) {
+20 		/* Cross off remaining multiples of prime. We can start with (prime*prime),
+21 		 * because if we have a k * prime, where k &lt; prime, this value would have
+22 		 * already been crossed off in a prior iteration. */
+23 		for (int i = prime * prime; i &lt; flags.length; i += prime) {
+24 			flags[i] = false;
+25 		}
+26 	}
+27
+28 	int getNextPrime(boolean[] flags, int prime) { 
+29 		int next = prime + 1;
+30 		while (next &lt; flags.length &amp;&amp; !flags[next]) { 
+31 			next++;
+32 		}
+33 		return next;
+34 	}
+</code></pre>
+<p>当然，可以对此进行许多优化。一种简单的方法是仅在数组中使用奇数，这将使我们可以将空间使用量减少一半。</p>
+<h3 id="概率"><a class="header" href="#概率">概率</a></h3>
+<p>概率可能是一个复杂的话题，但是它基于一些可以从逻辑上推导的基本定律。</p>
+<p>让我们看一个维恩图来形象化两个事件 A 和 B。两个圆的面积表示它们的相对概率，重叠的区域是事件{A and B}。</p>
+<div align=center><img src="img/ch6_7.png"/></div>
+#### A and B 的概率
+<p>想象一下，你正对着这个维恩图掷飞镖。落在 A 和 B 重叠区域处的概率是多少？如果你知道落在 A 点的概率，并且你也知道 A 在 B 上的百分率（也就是说，在你落在A点的情况下，同时落在B点的概率），那么可以将概率表示为：</p>
+<pre><code>P(A and B) = P(B given A) P(A)
+</code></pre>
+<p>例如，假设我们正在选择一个介于 1 到 10（包括 10）之间的数字。选择的数字既是偶数又是一个介于 1 和 5 之间的数字的概率是多少？选择一个介于 1 和 5 之间的数字的概率是 50％，而 1 和 5 之间的数字是偶数的概率是 40%。因此，两者都是的概率是：</p>
+<pre><code>P(x is even and x &lt;= 5)
+	= P(x is even given x &lt;= 5) P(x &lt;= 5) 
+	= (2/5) * (1/2)
+	= 1/5
+</code></pre>
+<p>请注意，由于 <code>P(A and B) = P(B given A) P(A) = P(A given B) P(B)</code>，因此可以用相反的形式表示 <code>A given B</code> 的概率：</p>
+<pre><code>P(A given B) = P(B given A) P(A) / P(B) 
+</code></pre>
+<p>上面的方程叫做贝叶斯定理。</p>
+<h4 id="a-or-b-的概率"><a class="header" href="#a-or-b-的概率">A or B 的概率</a></h4>
+<p>现在，假设你想要知道落在 <code>A or B</code> 上的概率是多少。如果你知道单独落在 A、B 每个上面的概率，你也知道落在覆盖区域概率，那么可以将概率表示为：</p>
+<pre><code>P(A or B) = P(A) + P(B) - P(A and B)
+</code></pre>
+<p>从逻辑上讲，这是有道理的。如果我们简单地把它们的大小相加，我们就会重复计算它们的交集。因此我们需要减去这个重复相加的部分。可以再次通过维恩图来形象化：</p>
+<div align=center><img src="img/ch6_8.png"/></div>
+例如，假设我们正在选择一个介于 1 到 10（包括 10）之间的数字。选择的数字是偶数，或者是一个介于 1 和 5 之间的数字的概率是多少？我们选择一个偶数的概率为50％，选择一个介于 1 和 5 之间的数字的概率是 50％。两者都做的概率是20％。因此，概率是：
+<pre><code>P(x is even or x &lt;=5)
+	= P(x is even)+ P(x &lt;= 5) - P(x is even and x &lt;= 5)
+	= 1/2 + 1/2 - 1/5
+	= 4/5
+</code></pre>
+<p>从这里，获取独立事件和互斥事件的特殊情况规则很容易。</p>
+<h4 id="独立"><a class="header" href="#独立">独立</a></h4>
+<p>如果 A 和 B 是独立的（也就是说，一个事件发生不能代表另一事件的发生），则 <code>P(A and B) = P(A) P(B)</code>。这个规则简单地来自于认识到 <code>P(B given A) = P(B)</code>，因为 A 并不代表 B。</p>
+<h4 id="互斥"><a class="header" href="#互斥">互斥</a></h4>
+<p>如果 A 和 B 是互斥的（也就是说，如果一个发生，那么另一个就不会发生），则 <code>P(A or B) = P(A) + P(B)</code>。这是因为 <code>P(A and B) = 0</code>，所以这一项从先前的<code>P(A or B)</code> 方程中去掉了。</p>
+<p>奇怪的是，许多人混淆了独立和互斥的概念。他们是完全不同的。实际上，两个事件不能既独立又互斥（假设两个概率都大于0）。为什么？因为互斥性意味着如果一个发生，那么另一个就不会发生。然而，独立性表示一个事件的发生完全与另一个事件无关。因此，只要两个事件的概率为非零，它们就永远不会相互排斥和独立。</p>
+<p>如果一个事件或两个事件的概率为零（即不可能），那么这两个事件就既是独立的又是互斥的。这可以通过简单应用独立性和互斥性的定义（即公式）来证明。</p>
+<h3 id="开始交谈"><a class="header" href="#开始交谈">开始交谈</a></h3>
+<p>遇到脑筋急转弯时不要惊慌。就像算法问题一样，面试官想知道你是如何解决问题的，他们不希望你立即知道答案。开始交谈，向面试官展示你是如何解决问题的。</p>
+<h3 id="开发规则和模式"><a class="header" href="#开发规则和模式">开发规则和模式</a></h3>
+<p>在许多情况下，你会发现在解决问题时写下“规则”或模式是很有用的。是的，你确实应该把这些写下来——它会帮助你在解题时记住它们。让我们通过一个例子来演示这种方法。</p>
+<p>你有两根绳子，每根都需要一个小时来燃烧。你将如何使用它们来精确地计时 15 分钟？注意，绳子的密度是不均匀的，所以绳子长度的一半不一定需要半个小时来燃烧。</p>
+<blockquote>
+<p>提示：到此为止，花点时间尝试自己解决这个问题。如果绝对必须，请通读本节以获得提示——但是要慢慢读。每一段都会让你更接近答案。</p>
+</blockquote>
+<p>从问题的陈述中，我们立即知道我们可以计时一小时。我们还可以计时两个小时，点燃一根绳子，等它烧完，然后点燃另一根。可以将其概括为一条规则。</p>
+<p><em>规则1</em>：给定一根绳子燃烧需要 x 分钟，另一根需要 y 分钟，我们可以计时 x+y 分钟。</p>
+<p>我们还能用绳子做什么？我们可能会认为，在绳子的中间（或除绳子末端以外的任何地方）点燃一根绳子不会对我们有什么好处。火焰会向两个方向蔓延，我们不知道燃烧需要多长时间。</p>
+<p>然而，我们可以在两头点燃一根绳子。两束火焰将在 30 分钟后汇合。</p>
+<p><em>规则2</em>：给定一根燃烧 x 分钟的绳子，我们可以计时 x/2 分钟。</p>
+<p>现在，我们知道可以用一根绳子计时 30 分钟。这也意味着我们可以从第二根绳子上减少 30 分钟的燃烧时间，方法是从两端点燃绳 1，从一端点燃绳 2。</p>
+<p><em>规则3</em>：如果绳 1 燃烧需要 x 分钟，绳 2 需要 y 分钟，我们可以把绳 2 变成一根燃烧时间为 (y - x) 分钟或 (y - x/2) 分钟的绳子。</p>
+<p>现在，让我们将所有这些拼在一起。我们可以将绳 2 变成燃烧时间为 30 分钟的绳子。如果然后在另一端点燃绳 2（请参阅规则 2），则绳 2 将在 15 分钟后燃烧完成。</p>
+<p>从头到尾，我们的方法如下：</p>
+<ol>
+<li>从两端点燃绳 1，从一端点燃绳 2。</li>
+<li>当绳 1 上的两个火焰相遇时，30 分钟已经过去了。绳 2 的燃烧时间还剩 30 分钟。</li>
+<li>此时，在另一端点燃绳 2。</li>
+<li>在恰好 15 分钟后，绳 2 将全部烧完。</li>
+</ol>
+<h3 id="最坏情况转换"><a class="header" href="#最坏情况转换">最坏情况转换</a></h3>
+<p>许多脑筋急转弯是使最坏情况最小化的问题（worst-case minimization problems），要么是最小化一个动作，要么是在做某件事时最多执行特定次数。一个有用的技巧是尝试“平衡”最坏的情况。也就是说，如果早期的决定导致最坏情况的发生，我们有时可以更改决策以平衡最坏情况。用一个例子来解释就最清楚不过了。</p>
+<p>“九球”问题是一个经典的面试问题。你有九个球。八个重量相同，一个较重。你会得到一个天平，它只告诉你左边或右边哪个更重。仅秤两次，找出较重的球。</p>
+<p>第一种方法是将球分成四个一组，第九个球放在一边。较重的球在较重的那一组中。如果它们的重量相同，那么我们就知道第九个球是较重的那个。对其余的组重复此方法将导致最坏的情况，即需要称重三次——多了一次！</p>
+<p>在最坏的情况下，这是一种不平衡：第九个球只需要一次称重就可以发现它是否较重，而其他的球则需要称重三次。如果我们通过将更多的球放在一边来惩罚第九球，我们可以减轻其他球的负担。这是一个“平衡最坏情况（worst case balancing）”的例子。</p>
+<p>如果我们把这些球分成三组，每组三个，我们就会知道哪组球重。我们甚至可以把它形式化为一个<em>规则</em>：给定 N 个球，其中 N 能被 3 整除，仅称一次就能使我们找到带有较重球的那 X/3 个球。</p>
+<p>对于最后一组三个球，我们只需重复以下步骤：将一个球放到一边，然后称重两个。选择两者中较重的一个。或者，如果球的重量相同，则选择第三个。</p>
+<h3 id="算法的方法"><a class="header" href="#算法的方法">算法的方法</a></h3>
+<p>如果你卡住了，可以考虑使用解决算法问题的其中一种方法来解决（从第 67 页开始）。脑筋急转弯通常只是去掉了技术方面的算法问题。Base Case 、Build 和 Do It Yourself (DIY) 这几部分的内容很有用。</p>
+<p><strong>Additional Reading</strong>： Useful Math (pg 629).</p>
+<hr />
+<h3 id="interview-questions"><a class="header" href="#interview-questions">Interview Questions</a></h3>
+<hr />
+<ul>
+<li>
+<p><strong>6.1 重药丸（The Heavy Pill）</strong>：你有20瓶药片。19个瓶子里装的是 1.0 克的药片，但是一个瓶子里装的是 1.1 克的药片。给你一个可以精确测量的天平，你怎么找到这个较重的瓶子?</p>
+<p>你只能使用一次天平。</p>
+<p><em>提示：#186, #252, #319, #387</em></p>
+</li>
+<li>
+<p><strong>6.2 篮球（Basketball）</strong>：你有一个篮球框，并被告知你可以玩以下两种游戏的其中之一。</p>
+<p>游戏 1：你只有一次投篮的机会。</p>
+<p>游戏 2：你有三次投篮的机会，但是在这三次中你必须投中的两次。</p>
+<p>如果 p 是一次投篮投中的概率，那么 p 的值在哪个范围的时候你应该选游戏 1，什么时候你应该选游戏 2？</p>
+<p><em>提示：#787, #239, #284, #323</em></p>
+</li>
+<li>
+<p><strong>6.3 多米诺骨牌（Dominos）</strong>：有一个 8x8 的国际象棋棋盘，其中从一个对角线挖去两个格子。给定 31 个多米诺骨牌，且一个多米诺骨牌恰好可以覆盖两个格子。你可以使用这 31 个多米诺骨牌覆盖整个棋盘吗？ 证明你的答案（通过提供示例或说明为什么它是不可能的）。</p>
+<p><em>提示：#367, #397</em></p>
+</li>
+<li>
+<p><strong>6.4 三角形上的蚂蚁（Ants on a Triangle）</strong>：三角形的不同顶点上有三只蚂蚁。如果它们开始沿着三角形的边走，发生碰撞的概率是多少？假设每只蚂蚁随机选择一个方向，任意一个方向被选择的可能性都相同，并且它们以相同的速度行走。</p>
+<p>类似地，求 n 个顶点多边形上 n 个蚂蚁碰撞的概率。</p>
+<p><em>提示：#157, #195, #296</em></p>
+</li>
+<li>
+<p><strong>6.5 水壶（Jugs of Water）</strong>：你有一个 5 夸脱的水壶，一个 3 夸脱的水壶，以及不限量的水（但没有量杯）。你将如何精确得到 4 夸脱的水？ 请注意，水壶的形状很奇怪，以至于不可能精确地填满水壶的“一半”。</p>
+<p><em>提示：#149, #379, #400</em></p>
+</li>
+<li>
+<p><strong>6.6 蓝眼睛的岛（Blue-Eyed Island）</strong>：一群人住在一个岛上，当一个访客带着一个奇怪的命令来了：所有的蓝眼睛的人必须尽快离开这个岛。每天晚上 8 点将有一个航班起飞。每个人都能看到别人眼睛的颜色，但他们不知道自己眼睛的颜色（也不允许任何人告诉他们）。此外，他们不知道有多少人有蓝眼睛，尽管他们知道至少有一个人有。这些蓝眼睛的人需要多少天才能离开?</p>
+<p><em>提示：#278, #282, #341, #370</em></p>
+</li>
+<li>
+<p><strong>6.7 世界末日（The Apocalypse）</strong>：在新的末日世界中，世界女王非常关心出生率。因此，她下令所有家庭必须确保他们有一个女孩，否则他们将面临巨额罚款。如果所有的家庭都遵守这一政策，也就是说，他们必须继续生孩子，直到他们有了一个女孩，在那一刻他们立即停止，那么新一代的性别比例会是多少？（假设某人在某一次怀孕中生男孩或女孩的几率是相等的。）从逻辑上解决问题，然后对其进行计算机模拟。</p>
+<p><em>提示：#154, #760, #171, #788, #201</em></p>
+</li>
+<li>
+<p><strong>6.8 鸡蛋掉落问题（The Egg Drop Problem）</strong>：有一栋100层的建筑物。如果鸡蛋从第 N 层或以上掉落，它将破裂。如果它从下面的任何一层掉下来，它都不会破裂。给定两个鸡蛋。请找到这个楼层 N，同时要保证次策略在最坏的情况下所扔次数最少。</p>
+<p><em>提示：#756, #233, #294, #333, #357, #374, #395</em></p>
+</li>
+<li>
+<p><strong>6.9 100 个储物柜（100 Lockers）</strong>：走廊中有 100 个封闭的储物柜。一个人首先打开所有 100 个储物柜。接下来，他在每 2 个储物柜处将当前的关闭。然后，在第三次通过时，他会在每 3 个储物柜处切换当前储物柜的开关状态（如果储物柜是打开的，则将其关闭；如果储物柜是关闭的，则将其打开）。这个过程将持续 100 次，这样，在每 i 次通过走廊时，这个人就会在每 i 个储物柜处切换当前的状态。当他的第 100 次通过走廊后，他只切换了第 100 个储物柜，请问当前还有多少储物柜是开着的？</p>
+<p><em>提示：#139, #172, #264, #306</em></p>
+</li>
+<li>
+<p><strong>6.10 有毒（Poison）</strong>：你有 1000 瓶苏打水，而其中有一瓶是有毒的。你有 10 张可以用来检测毒素的试纸。一滴毒药就会使试纸永久呈阳性。你可以一次在试纸上滴任意数量的液滴，并且可以根据需要多次重复使用测试条（只要结果呈阴性）。但是，你每天只能测试一次，并且需要 7 天才能返回结果。你如何用最少的时间找出有毒的那瓶水？</p>
+<p>FOLLOW UP</p>
+<p>编写代码来模拟你的方法。</p>
+<p><em>提示：#146, #163, #183, #191, #205, #221, #230, #241, #249</em></p>
+</li>
+</ul>
+<p><strong>附加问题</strong>：中等问题(#16.5)，困难问题(#17.19)。</p>
+<p>提示从第 662 页开始。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="Chapter_5_Bit_Manipulation.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="Chapter_7_Object-Oriented_Design.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="Chapter_5_Bit_Manipulation.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="Chapter_7_Object-Oriented_Design.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
